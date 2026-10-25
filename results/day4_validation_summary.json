@@ -1,0 +1,48 @@
+{
+  "dataset": "mdwiratathya/SLAKE-vqa-english",
+  "split": "validation",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "seed": 42,
+  "target_questions": 150,
+  "completed_paired_questions": 150,
+  "missing_predictions": 0,
+  "status": "complete",
+  "metrics": {
+    "image": {
+      "n_questions": 150,
+      "exact_match": 0.4733,
+      "token_f1": 0.5072
+    },
+    "text_only": {
+      "n_questions": 150,
+      "exact_match": 0.3533,
+      "token_f1": 0.3807
+    },
+    "paired_transitions": {
+      "image_correct_text_wrong": 26,
+      "image_wrong_text_correct": 8,
+      "both_same_em": 116,
+      "answer_changed": 78
+    },
+    "paired_effect": {
+      "n_questions": 150,
+      "n_unique_images": 73,
+      "em_diff_percentage_points": 12.0,
+      "em_cluster_bootstrap_95ci_pp": [
+        4.14,
+        19.85
+      ],
+      "token_f1_diff": 0.1265,
+      "token_f1_cluster_bootstrap_95ci": [
+        0.0497,
+        0.2008
+      ],
+      "method_note": "按同一医学影像成簇Bootstrap。区间为探索性不确定性估计，不代表外部医院泛化能力。"
+    }
+  },
+  "notes": [
+    "严格EM不等于医学语义准确率；同义词和答案标签须人工复核。",
+    "旧50条结果在验证一致后复用，正式测试集未参与调参。",
+    "并不对语言模型的临床诊断安全性作出声明。"
+  ]
+}
