@@ -1,0 +1,36 @@
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Large downloaded models / datasets / private assets
+*.safetensors
+*.bin
+*.pt
+*.pth
+models/
+data/
+datasets/
+.cache/
+.huggingface/
+hf_cache/
+checkpoints/
+*.zip
+*.tar
+*.tar.gz
+
+# Local evaluation results: publish ONLY the curated aggregate summary
+results/*
+!results/.gitkeep
+!results/day4_validation_summary.json
+
+demo_examples/
+*.log
+*.tmp
+.ipynb_checkpoints/
+.DS_Store

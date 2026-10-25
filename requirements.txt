@@ -1,0 +1,10 @@
+# 建议在已有 CUDA/PyTorch 环境安装；不要让 pip 无意覆盖 GPU 版 torch。
+transformers>=4.57.0,<5.0
+accelerate>=1.2,<3.0
+datasets>=3.0,<5.0
+huggingface_hub>=0.30
+pillow>=10.0
+pandas>=2.0
+numpy>=1.26
+gradio>=5.0,<7.0
+tqdm>=4.66
