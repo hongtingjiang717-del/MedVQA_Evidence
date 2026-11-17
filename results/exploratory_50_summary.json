@@ -1,0 +1,59 @@
+{
+  "split": "validation",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "paired_n_questions": 50,
+  "unique_n_images": 43,
+  "mean_questions_per_image": 1.16,
+  "duplicate_saved_records": 0,
+  "incomplete_sample_count": 0,
+  "incomplete_examples": [],
+  "modes": {
+    "image": {
+      "n_questions": 50,
+      "exact_match": 0.44,
+      "token_f1": 0.4651
+    },
+    "text_only": {
+      "n_questions": 50,
+      "exact_match": 0.32,
+      "token_f1": 0.3478
+    },
+    "wrong_image": {
+      "n_questions": 50,
+      "exact_match": 0.3,
+      "token_f1": 0.3178
+    }
+  },
+  "image_vs_text_only": {
+    "observed_diff_percentage_points": 12.0,
+    "image_cluster_bootstrap_95ci_pp": [
+      -1.92,
+      24.49
+    ],
+    "cluster_sign_flip_exploratory_p": 0.1408,
+    "first_correct_second_wrong": 9,
+    "first_wrong_second_correct": 3,
+    "unique_image_count": 43,
+    "method_note": "按唯一图像成簇重采样；p为探索性符号翻转检验，非临床证据。"
+  },
+  "image_vs_wrong_image": {
+    "observed_diff_percentage_points": 14.0,
+    "image_cluster_bootstrap_95ci_pp": [
+      -2.13,
+      30.61
+    ],
+    "cluster_sign_flip_exploratory_p": 0.1668,
+    "first_correct_second_wrong": 12,
+    "first_wrong_second_correct": 5,
+    "unique_image_count": 43,
+    "method_note": "按唯一图像成簇重采样；p为探索性符号翻转检验，非临床证据。"
+  },
+  "prediction_change_rate_image_vs_wrong": 0.6,
+  "prediction_change_rate_image_vs_text": 0.5,
+  "quality_notes": [
+    "自动Exact Match对医学同义词敏感，需要人工语义复核。",
+    "旧evaluate.py未记录替换图像的来源，wrong_image为探索性对照。",
+    "训练/验证/测试跨集图像泄漏需要单独执行preflight.py --exhaustive。",
+    "按影像聚类的置信区间反映内部不确定性，不保证跨医院泛化。"
+  ]
+}

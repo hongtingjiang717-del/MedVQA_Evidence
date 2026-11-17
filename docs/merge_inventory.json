@@ -1,0 +1,20 @@
+{
+  "main_folder": "MedVQA_Evidence",
+  "shared_files_verified": [
+    "app.py",
+    "evaluate.py",
+    "medvqa.py",
+    "preflight.py",
+    "requirements.txt",
+    "tests/test_metrics.py",
+    "results/day4_validation_summary.json",
+    "figures/day5_validation_metrics.png"
+  ],
+  "mvp_files_preserved_locally": 25,
+  "published_exploratory_summary": "results/exploratory_50_summary.json",
+  "private_archive": ".local_archive/medvqa_evidence_mvp",
+  "historical_entries": [
+    "archive/early_app.py",
+    "archive/early_evaluate.py"
+  ]
+}

@@ -1,14 +1,18 @@
-# Python cache and local environments
+# Local environments, credentials and caches
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.ipynb_checkpoints/
 .venv/
 venv/
+.vscode/
+.idea/
 .env
 .env.*
 !.env.example
-
-# Large downloaded models / datasets / private assets
+.local_archive/
+.resume_work/
+# Model and dataset downloads
 *.safetensors
 *.bin
 *.pt
@@ -23,14 +27,14 @@ checkpoints/
 *.zip
 *.tar
 *.tar.gz
-
-# Local evaluation results: publish ONLY the curated aggregate summary
+# Curated aggregate statistics only
 results/*
 !results/.gitkeep
 !results/day4_validation_summary.json
-
+!results/exploratory_50_summary.json
+demo_example/
 demo_examples/
 *.log
 *.tmp
-.ipynb_checkpoints/
 .DS_Store
+Thumbs.db

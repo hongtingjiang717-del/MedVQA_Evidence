@@ -1,45 +1,34 @@
-# 如何把本项目发到GitHub（AutoDL终端）
+# GitHub 更新与后续开发
 
-## 第1步：创建自己的GitHub仓库
-登录GitHub，右上角`+` → `New repository`，名称建议 `MedVQA-Evidence`，首次建议选择 **Private**；不要勾选自动创建README、.gitignore等初始化选项，因为压缩包已包含这些文件。
+目标仓库：[hongtingjiang717-del/MedVQA_Evidence](https://github.com/hongtingjiang717-del/MedVQA_Evidence)。本次是在已有 main 上追加整理提交，保留原历史，不重新创建仓库或强制覆盖历史。
 
-## 第2步：在AutoDL中上传本压缩包
-将压缩包上传到 `/root/autodl-tmp/`，在终端执行：
+## 在整理后的本机目录继续修改
 
-```bash
-cd /root/autodl-tmp
-unzip -o MedVQA-Evidence_GitHub_Ready.zip
-cd MedVQA-Evidence_GitHub_Release
-python day5_app.py --check
+```powershell
+cd D:\desktop\sgg\MedVQA_Evidence
 python -m unittest discover -s tests -v
-```
-
-若实际ZIP解压结构不同，执行`ls`确认`README.md`所在的目录再`cd`进去。
-
-## 第3步：先核查提交文件
-
-```bash
-git init
-git branch -M main
-git add .
+python app.py --check
 git status
+git add -A
+git commit -m "Update MedVQA project"
+git push origin main
 ```
 
-确认没有原始医疗数据、大模型权重、`*.safetensors`、缓存目录、`.env`、`results/day4_validation.jsonl`。仅需保留`results/day4_validation_summary.json`这个聚合摘要。
+这些是以后修改后的常规命令。本次发布使用已授权 GitHub 工具创建文件树、创建以原 main 为父的新提交，再更新 main；不是通过 git push 完成的上传。
 
-## 第4步：提交及关联远程仓库
+## 在其他机器获取项目
 
 ```bash
-git config user.name "你的GitHub用户名"
-git config user.email "你的GitHub提交邮箱"
-git commit -m "Initial release: MedVQA-Evidence"
-git remote add origin https://github.com/<你的用户名>/MedVQA-Evidence.git
-git push -u origin main
+git clone https://github.com/hongtingjiang717-del/MedVQA_Evidence.git
+cd MedVQA_Evidence
+python -m unittest discover -s tests -v
+python app.py --check
 ```
 
-将`<你的用户名>`替换成自己的真实GitHub用户名。远程登录时推荐GitHub CLI、凭据管理器或个人访问令牌（PAT），不要把令牌直接粘贴进命令或发到聊天记录。
+真正模型推理需要兼容的 CUDA/PyTorch 环境、requirements.txt 依赖、SLAKE 数据和 Qwen 模型；离线检查不会下载权重或数据。
 
-**GitHub仓库可见性**：Private仓库只有你授权的人能看，面试展示可在审查后改成Public；公开前先确认影像素材及依赖的授权。
+## 提交范围
 
-## 第5步：发布后的检查
-打开GitHub仓库，检查README内两张截图正常显示、`results/day4_validation_summary.json`能点开、没有大模型权重和隐私文件。再将链接写到简历的项目名称旁。
+上传源码、测试、README、方法报告、演示截图、两份明确区分的聚合汇总。`.local_archive/`、`.resume_work/`、原始逐题预测和复核表、模型权重、原始数据与缓存均不上传。
+
+如果之后确实要公开新的聚合统计，请先核对内容，再在 .gitignore 中单独放行；不要取消整个 results/ 或本机归档目录的忽略规则。
