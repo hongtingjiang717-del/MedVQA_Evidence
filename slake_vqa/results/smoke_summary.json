@@ -1,0 +1,48 @@
+{
+  "source": "artifacts/results/smoke_summary.json",
+  "region_test": {
+    "synthetic_target_pixels": 749,
+    "control_pixels": 749,
+    "target_specific_change": 1.0,
+    "variants": {
+      "global": {
+        "answer": "missing",
+        "persistence": 0.0
+      },
+      "box": {
+        "answer": "missing",
+        "persistence": 0.0
+      },
+      "mask": {
+        "answer": "missing",
+        "persistence": 0.0
+      },
+      "control": {
+        "answer": "visible",
+        "persistence": 1.0
+      }
+    }
+  },
+  "http_test": {
+    "health": "ready",
+    "unauthenticated_request_rejected": true,
+    "html": 200,
+    "knowledge_citation_ids": [
+      "xray-projection",
+      "ct-principle",
+      "mri-principle"
+    ],
+    "mixed_route_returned_sources": true,
+    "visual_disabled_message": "Visual inference is disabled in the CPU retrieval demo.",
+    "separate_profile_preference": "concise",
+    "preference_after_restart": "detailed"
+  },
+  "lora_training_smoke": {
+    "weights": "tiny random Qwen3-VL architecture",
+    "dataset_train_qid": "0",
+    "assistant_tokens": 3,
+    "trainable_parameters": 2048,
+    "forward_loss_finite": true,
+    "optimizer_steps": 1
+  }
+}

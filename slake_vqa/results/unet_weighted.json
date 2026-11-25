@@ -1,0 +1,602 @@
+{
+  "source": "artifacts/gpu-run/results/gpu/unet_weighted.json",
+  "dataset": "BoKelvin/SLAKE",
+  "organ": "left lung",
+  "modality": "CT",
+  "device": "cuda",
+  "size": 96,
+  "epochs": 64,
+  "train_images": 25,
+  "included_images": "positive annotated organ masks only",
+  "best_epoch": 64,
+  "train_foreground_fraction": 0.025564235812053086,
+  "bce_positive_weight": 6.173908661908082,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.6409099102020264,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.6117797195911407,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 1.5296824872493744,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 1.4538252651691437,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3739713728427887,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 1.3449577689170837,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 1.2806668281555176,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 1.4002673625946045,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 1.3266018331050873,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 1.31749227643013,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 1.2174267172813416,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 1.2668000161647797,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 13,
+      "loss": 1.22355255484581,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 14,
+      "loss": 1.1602486670017242,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 15,
+      "loss": 1.0585271418094635,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 16,
+      "loss": 1.0541701018810272,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 17,
+      "loss": 0.9885470271110535,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 18,
+      "loss": 1.0620822608470917,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 19,
+      "loss": 1.0563815236091614,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 20,
+      "loss": 1.0080648511648178,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 21,
+      "loss": 0.9825115501880646,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 22,
+      "loss": 0.9483440667390823,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 23,
+      "loss": 0.8834062814712524,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 24,
+      "loss": 0.8892444968223572,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 25,
+      "loss": 0.9555169641971588,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 26,
+      "loss": 0.933808833360672,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 27,
+      "loss": 0.8820541203022003,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 28,
+      "loss": 0.8803728371858597,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 29,
+      "loss": 0.8137752860784531,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 30,
+      "loss": 0.8660384863615036,
+      "validation": {
+        "images": 5,
+        "dice": 0.0,
+        "iou": 0.0
+      }
+    },
+    {
+      "epoch": 31,
+      "loss": 0.7427632361650467,
+      "validation": {
+        "images": 5,
+        "dice": 0.029285373594320412,
+        "iou": 0.015063283899117543
+      }
+    },
+    {
+      "epoch": 32,
+      "loss": 0.8249415904283524,
+      "validation": {
+        "images": 5,
+        "dice": 0.05677290338707661,
+        "iou": 0.02979956315045612
+      }
+    },
+    {
+      "epoch": 33,
+      "loss": 0.7749611586332321,
+      "validation": {
+        "images": 5,
+        "dice": 0.10517359936380338,
+        "iou": 0.05773403855277498
+      }
+    },
+    {
+      "epoch": 34,
+      "loss": 0.7285731732845306,
+      "validation": {
+        "images": 5,
+        "dice": 0.12372537178511482,
+        "iou": 0.0690595328423113
+      }
+    },
+    {
+      "epoch": 35,
+      "loss": 0.6767576932907104,
+      "validation": {
+        "images": 5,
+        "dice": 0.45523563762165276,
+        "iou": 0.36756172571111356
+      }
+    },
+    {
+      "epoch": 36,
+      "loss": 0.6881538778543472,
+      "validation": {
+        "images": 5,
+        "dice": 0.481314441025078,
+        "iou": 0.39787780844347437
+      }
+    },
+    {
+      "epoch": 37,
+      "loss": 0.6529179364442825,
+      "validation": {
+        "images": 5,
+        "dice": 0.5073688838507298,
+        "iou": 0.43991698492434456
+      }
+    },
+    {
+      "epoch": 38,
+      "loss": 0.599045604467392,
+      "validation": {
+        "images": 5,
+        "dice": 0.48988154090473707,
+        "iou": 0.41412968652375876
+      }
+    },
+    {
+      "epoch": 39,
+      "loss": 0.634824201464653,
+      "validation": {
+        "images": 5,
+        "dice": 0.4452065366660778,
+        "iou": 0.35767245139238507
+      }
+    },
+    {
+      "epoch": 40,
+      "loss": 0.6175574213266373,
+      "validation": {
+        "images": 5,
+        "dice": 0.5150637930794091,
+        "iou": 0.4515503998976145
+      }
+    },
+    {
+      "epoch": 41,
+      "loss": 0.49491140246391296,
+      "validation": {
+        "images": 5,
+        "dice": 0.4408028069045018,
+        "iou": 0.3485965697240865
+      }
+    },
+    {
+      "epoch": 42,
+      "loss": 1.092649981379509,
+      "validation": {
+        "images": 5,
+        "dice": 0.15470379026794134,
+        "iou": 0.08759049115046258
+      }
+    },
+    {
+      "epoch": 43,
+      "loss": 0.9354077875614166,
+      "validation": {
+        "images": 5,
+        "dice": 0.43218107470405254,
+        "iou": 0.3443079502473446
+      }
+    },
+    {
+      "epoch": 44,
+      "loss": 0.8250047564506531,
+      "validation": {
+        "images": 5,
+        "dice": 0.42375847602926053,
+        "iou": 0.32923987441614294
+      }
+    },
+    {
+      "epoch": 45,
+      "loss": 0.7671571969985962,
+      "validation": {
+        "images": 5,
+        "dice": 0.35386541849946596,
+        "iou": 0.2512849825797098
+      }
+    },
+    {
+      "epoch": 46,
+      "loss": 0.8707221001386642,
+      "validation": {
+        "images": 5,
+        "dice": 0.4465760739254724,
+        "iou": 0.34710271161963735
+      }
+    },
+    {
+      "epoch": 47,
+      "loss": 0.7219129055738449,
+      "validation": {
+        "images": 5,
+        "dice": 0.3556889037783456,
+        "iou": 0.25501527367712135
+      }
+    },
+    {
+      "epoch": 48,
+      "loss": 0.6747637242078781,
+      "validation": {
+        "images": 5,
+        "dice": 0.47203716020092396,
+        "iou": 0.3908432849613509
+      }
+    },
+    {
+      "epoch": 49,
+      "loss": 0.6504091769456863,
+      "validation": {
+        "images": 5,
+        "dice": 0.4693062909479143,
+        "iou": 0.3823513698919484
+      }
+    },
+    {
+      "epoch": 50,
+      "loss": 0.6762373894453049,
+      "validation": {
+        "images": 5,
+        "dice": 0.5135382761044637,
+        "iou": 0.4489148172139452
+      }
+    },
+    {
+      "epoch": 51,
+      "loss": 0.5113127529621124,
+      "validation": {
+        "images": 5,
+        "dice": 0.5012964560108762,
+        "iou": 0.4306175238072701
+      }
+    },
+    {
+      "epoch": 52,
+      "loss": 0.419651061296463,
+      "validation": {
+        "images": 5,
+        "dice": 0.500082319200062,
+        "iou": 0.4289035772411732
+      }
+    },
+    {
+      "epoch": 53,
+      "loss": 0.3806439936161041,
+      "validation": {
+        "images": 5,
+        "dice": 0.5068838503896036,
+        "iou": 0.4394635309080601
+      }
+    },
+    {
+      "epoch": 54,
+      "loss": 0.3099185675382614,
+      "validation": {
+        "images": 5,
+        "dice": 0.4990239676739074,
+        "iou": 0.42865174731411887
+      }
+    },
+    {
+      "epoch": 55,
+      "loss": 0.44489769637584686,
+      "validation": {
+        "images": 5,
+        "dice": 0.5281414606999482,
+        "iou": 0.4717575028294488
+      }
+    },
+    {
+      "epoch": 56,
+      "loss": 0.4333655834197998,
+      "validation": {
+        "images": 5,
+        "dice": 0.5274298849855743,
+        "iou": 0.4708370357206327
+      }
+    },
+    {
+      "epoch": 57,
+      "loss": 0.40904945135116577,
+      "validation": {
+        "images": 5,
+        "dice": 0.5303979506434967,
+        "iou": 0.4758988480029886
+      }
+    },
+    {
+      "epoch": 58,
+      "loss": 0.36721764504909515,
+      "validation": {
+        "images": 5,
+        "dice": 0.5138929669364452,
+        "iou": 0.44786304093762663
+      }
+    },
+    {
+      "epoch": 59,
+      "loss": 0.25310759246349335,
+      "validation": {
+        "images": 5,
+        "dice": 0.5350734137019781,
+        "iou": 0.4833861295993193
+      }
+    },
+    {
+      "epoch": 60,
+      "loss": 0.2647598534822464,
+      "validation": {
+        "images": 5,
+        "dice": 0.5341070498734611,
+        "iou": 0.4815465969483971
+      }
+    },
+    {
+      "epoch": 61,
+      "loss": 0.23832352459430695,
+      "validation": {
+        "images": 5,
+        "dice": 0.5233197859380142,
+        "iou": 0.4642788851777856
+      }
+    },
+    {
+      "epoch": 62,
+      "loss": 0.30520670115947723,
+      "validation": {
+        "images": 5,
+        "dice": 0.5396828619634534,
+        "iou": 0.4904868410632017
+      }
+    },
+    {
+      "epoch": 63,
+      "loss": 0.2188406139612198,
+      "validation": {
+        "images": 5,
+        "dice": 0.5467193033179786,
+        "iou": 0.502518165028781
+      }
+    },
+    {
+      "epoch": 64,
+      "loss": 0.2243727445602417,
+      "validation": {
+        "images": 5,
+        "dice": 0.5472295931690765,
+        "iou": 0.5030972146497757
+      }
+    }
+  ],
+  "validation": {
+    "images": 5,
+    "dice": 0.5472295931690765,
+    "iou": 0.5030972146497757
+  },
+  "test": {
+    "images": 5,
+    "dice": 0.5904063600180376,
+    "iou": 0.4993521403209807
+  }
+}

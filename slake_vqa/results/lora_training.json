@@ -1,0 +1,22 @@
+{
+  "source": "artifacts/gpu-run/checkpoints/gpu/slake-lora-v1/training_summary.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "train_questions": 4919,
+  "validation_questions": 120,
+  "train_metrics": {
+    "train_runtime": 1272.9744,
+    "train_samples_per_second": 3.864,
+    "train_steps_per_second": 0.483,
+    "total_flos": 1.4794990838956032e+16,
+    "train_loss": 0.319782413215172,
+    "epoch": 1.0
+  },
+  "validation_metrics": {
+    "eval_loss": 0.15674899518489838,
+    "eval_runtime": 9.014,
+    "eval_samples_per_second": 13.313,
+    "eval_steps_per_second": 13.313,
+    "epoch": 1.0
+  },
+  "global_step": 615
+}

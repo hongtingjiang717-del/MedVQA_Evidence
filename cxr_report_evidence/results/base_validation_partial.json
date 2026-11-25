@@ -1,0 +1,48 @@
+{
+  "source": "artifacts/results/cxr-openi-formal-eval.8VY46V/reports.json",
+  "reports_sha256": "ac7531152e40a2e381685771627b916655a449b541e3281ed960d63e32ed2979",
+  "manifest_sha256": "ea079b237d72c91bca38f93c69975a671988b7d42aa090518bad8d214d6922c6",
+  "archive_adapter_sha256": "9ff7c1cb078db06370721770e72f73101782d2ac18d942cffbd565f090bc824d",
+  "downloaded_adapter_sha256": "f8c8b3a6cfdcdff8c76495c433ac3cb8250672f167fd0aa38e3da0219f3ad0da",
+  "method": "ROUGE-L F1: ASCII alphanumeric lowercased tokens, NLTK Porter stemming for tokens longer than three, LCS, per-report macro mean. Local recomputation following Google ROUGE.",
+  "coverage": {
+    "validation": {
+      "planned": 100,
+      "by_variant": {
+        "base_image": 55,
+        "base_text": 55,
+        "lora_image": 0,
+        "lora_text": 0
+      }
+    },
+    "test": {
+      "planned": 100,
+      "by_variant": {
+        "base_image": 0,
+        "base_text": 0,
+        "lora_image": 0,
+        "lora_text": 0
+      }
+    }
+  },
+  "partial_validation": {
+    "by_variant": {
+      "base_image": {
+        "reports": 55,
+        "rouge_l_f1": 0.10727894334954866,
+        "median_word_count": 175
+      },
+      "base_text": {
+        "reports": 55,
+        "rouge_l_f1": 0.11010512076405043,
+        "median_word_count": 166
+      }
+    },
+    "paired_image_vs_text": {
+      "average_delta": -0.0028261774145017815,
+      "image_higher": 25,
+      "text_higher": 28,
+      "tied": 2
+    }
+  }
+}

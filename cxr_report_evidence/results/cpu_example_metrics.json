@@ -1,0 +1,32 @@
+{
+  "source": "artifacts/results/local-review/cpu-example-metrics.json",
+  "reports_sha256": "209160987627f2f7adf07c4173b2b8835e1ce18dcf045e8545dcbc6b0add4a6e",
+  "manifest_sha256": "ea079b237d72c91bca38f93c69975a671988b7d42aa090518bad8d214d6922c6",
+  "adapter_sha256": "f8c8b3a6cfdcdff8c76495c433ac3cb8250672f167fd0aa38e3da0219f3ad0da",
+  "study_id": "iu-CXR3023",
+  "scope": "Single CPU test example; not the independent test aggregate",
+  "by_split": {
+    "test": {
+      "base_image": {
+        "reports": 1,
+        "rouge_l_f1": 0.1116751269035533,
+        "word_count": 175
+      },
+      "base_text": {
+        "reports": 1,
+        "rouge_l_f1": 0.11578947368421053,
+        "word_count": 168
+      },
+      "lora_image": {
+        "reports": 1,
+        "rouge_l_f1": 0.7777777777777778,
+        "word_count": 14
+      },
+      "lora_text": {
+        "reports": 1,
+        "rouge_l_f1": 0.21621621621621623,
+        "word_count": 15
+      }
+    }
+  }
+}

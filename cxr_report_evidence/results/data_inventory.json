@@ -1,0 +1,20 @@
+{
+  "source": "artifacts/data/cxr-openi/manifest-formal.json",
+  "dataset": "IU X-Ray (NLM Open-i)",
+  "split_unit": "report_uid",
+  "seed": 42,
+  "frontal_list_sha256": "4843b432762a28c6b64b3b43e142ef2cd2a173d90409ee192d19e067756c3e88",
+  "matched_reports": 3201,
+  "split_pool_sizes": {
+    "train": 2561,
+    "validation": 320,
+    "test": 320
+  },
+  "skipped_unreadable_images": 0,
+  "manifest_sha256": "ea079b237d72c91bca38f93c69975a671988b7d42aa090518bad8d214d6922c6",
+  "selected": {
+    "validation": 100,
+    "test": 100,
+    "train": 1600
+  }
+}

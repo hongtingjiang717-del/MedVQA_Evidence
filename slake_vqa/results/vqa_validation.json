@@ -1,0 +1,40 @@
+{
+  "source": "artifacts/gpu-run/results/gpu/vqa-val-150/summary.json",
+  "dataset": "BoKelvin/SLAKE",
+  "split": "validation",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "device": "cuda",
+  "max_new_tokens": 48,
+  "question_count": 150,
+  "unique_images": 73,
+  "metrics": {
+    "base": {
+      "image": {
+        "n": 150,
+        "em": 0.47333333333333333,
+        "token_f1": 0.50718863707099
+      },
+      "text_only": {
+        "n": 150,
+        "em": 0.35333333333333333,
+        "token_f1": 0.3806825396825397
+      }
+    },
+    "lora": {
+      "image": {
+        "n": 150,
+        "em": 0.74,
+        "token_f1": 0.7877130647130647
+      },
+      "text_only": {
+        "n": 150,
+        "em": 0.38666666666666666,
+        "token_f1": 0.43095891690009336
+      }
+    },
+    "lora_minus_base_em_pp": {
+      "image": 26.666666666666668,
+      "text_only": 3.3333333333333326
+    }
+  }
+}

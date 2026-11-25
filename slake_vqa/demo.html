@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedVQA-Evidence</title>
+<style>
+  :root { color-scheme:light; --ink:#17322c; --muted:#526962; --green:#1a624d; --paper:#f4f7f2; --line:#d4e1d9 }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,sans-serif }
+  main { width:min(100% - 32px, 960px); margin:48px auto }
+  h1 { margin:0; font-size:clamp(26px,4vw,44px); line-height:1.15 }
+  header p, #status { color:var(--muted) }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px }
+  section, form { padding:24px; border:1px solid var(--line); border-radius:16px; background:white; min-width:0 }
+  h2 { margin:0 0 10px; font-size:19px }
+  label { display:block; margin:12px 0 }
+  textarea,input,select,button { font:inherit }
+  textarea,input,select { width:100%; border:1px solid #aebfb4; border-radius:8px; padding:8px; color:inherit; background:#fff }
+  button { cursor:pointer; padding:7px 13px; color:var(--green); background:white; border:1px solid #aebfb4; border-radius:8px }
+  button[type=submit] { background:var(--green); color:white; border-color:var(--green) }
+  button:disabled { opacity:.55; cursor:wait }
+  .actions { display:flex; gap:8px; flex-wrap:wrap }
+  a { color:var(--green) }
+  output { display:block; white-space:pre-wrap; overflow-wrap:anywhere }
+  ol { padding-left:24px }
+  #audit { white-space:pre-wrap; overflow-wrap:anywhere }
+  #preview { width:100%; max-height:260px; object-fit:contain; background:#111; border-radius:8px; margin-bottom:12px }
+  @media (max-width:720px) { .grid { grid-template-columns:1fr } main { margin:24px auto } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>MedVQA-Evidence</h1>
+    <p>医学影像问答与资料引用 · 使用公开教学样例</p>
+  </header>
+  <div class="grid">
+    <form id="ask">
+      <h2>提问</h2>
+      <label>问题<textarea id="question" rows="3" maxlength="1500" required>How does a CT scanner reconstruct a slice?</textarea></label>
+      <label>模式<select id="intent"><option value="auto">自动</option><option value="knowledge">知识检索</option><option value="visual">影像问答</option><option value="mixed">影像＋知识</option></select></label>
+      <label>公开 SLAKE 影像 ID<input id="image" placeholder="例如 xmlab0" maxlength="80"></label>
+      <details><summary>分割审计设置</summary>
+        <label>影像模态<input id="modality" placeholder="X-RAY 或 CT"></label>
+        <label>审计目标<input id="organ" placeholder="left lung、liver 或 cardiomegaly"></label>
+        <button type="button" id="show-mask">预览候选区域</button>
+      </details>
+      <label>跨会话讲解偏好<select id="style"><option value="concise">简洁</option><option value="detailed">更多来源</option></select></label>
+      <div class="actions"><button type="submit" id="send">发送</button><button type="button" id="next">新会话</button></div>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+    <section aria-label="回答">
+      <img id="preview" alt="SLAKE 影像预览" hidden>
+      <h2>影像回答</h2><output id="visual">—</output>
+      <p id="finding" hidden></p>
+      <p id="risk" hidden></p>
+      <details id="audit-panel" hidden><summary>区域审计</summary><pre id="audit"></pre></details>
+      <h2>知识解释</h2><output id="knowledge">—</output>
+      <ol id="sources"></ol>
+      <a href="/docs">API 文档</a>
+    </section>
+  </div>
+</main>
+<script>
+const byId = id => document.getElementById(id);
+let profile = localStorage.getItem('medvqa-profile');
+let thread = null;
+const preview = byId('preview');
+preview.addEventListener('load', () => preview.hidden = false);
+preview.addEventListener('error', () => preview.hidden = true);
+byId('image').addEventListener('change', () => {
+  const value = byId('image').value.trim();
+  preview.hidden = true;
+  if (value) preview.src = '/images/' + encodeURIComponent(value);
+  else preview.removeAttribute('src');
+});
+byId('show-mask').addEventListener('click', async () => {
+  const image = byId('image').value.trim();
+  const organ = byId('organ').value.trim();
+  if (!image || !organ) { byId('status').textContent = '请填写影像 ID 和审计目标'; return; }
+  const path = '/images/' + encodeURIComponent(image) + '?organ=' + encodeURIComponent(organ);
+  byId('show-mask').disabled = true;
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error((await response.json()).detail);
+    const objectUrl = URL.createObjectURL(await response.blob());
+    preview.addEventListener('load', () => URL.revokeObjectURL(objectUrl), {once:true});
+    preview.src = objectUrl;
+    byId('status').textContent = '绿色区域为审计候选区域';
+  } catch (error) { byId('status').textContent = error.message; }
+  finally { byId('show-mask').disabled = false; }
+});
+async function request(path, method, data) {
+  const headers = {'Content-Type':'application/json'};
+  if (profile) headers['X-Profile-Token'] = profile;
+  const res = await fetch(path, {method, headers, body: data === undefined ? undefined : JSON.stringify(data)});
+  const json = await res.json();
+  if (!res.ok) throw new Error(typeof json.detail === 'string' ? json.detail : JSON.stringify(json.detail));
+  return json;
+}
+async function getProfile() {
+  if (!profile) {
+    profile = (await request('/profiles', 'POST')).profile_token;
+    localStorage.setItem('medvqa-profile', profile);
+  }
+}
+byId('style').value = localStorage.getItem('medvqa-style') || 'concise';
+byId('style').addEventListener('change', async () => {
+  try {
+    await getProfile();
+    const style = byId('style').value;
+    await request('/preferences','PUT',{style});
+    localStorage.setItem('medvqa-style',style);
+    byId('status').textContent = '偏好已保存';
+  } catch (error) { byId('status').textContent = error.message; }
+});
+byId('next').addEventListener('click', () => {
+  thread = null;
+  byId('visual').textContent = byId('knowledge').textContent = '—';
+  byId('sources').replaceChildren();
+  byId('audit-panel').hidden = true;
+  byId('finding').hidden = true;
+  byId('risk').hidden = true;
+  byId('status').textContent = '已开启新会话';
+});
+byId('ask').addEventListener('submit', async event => {
+  event.preventDefault();
+  byId('send').disabled = byId('next').disabled = true;
+  byId('finding').hidden = true;
+  byId('risk').hidden = true;
+  byId('status').textContent = '正在处理';
+  try {
+    await getProfile();
+    const answer = await request('/ask','POST',{
+      question:byId('question').value, intent:byId('intent').value, image_id:byId('image').value.trim() || null,
+      modality:byId('modality').value.trim() || null, organ:byId('organ').value.trim() || null, thread_id:thread
+    });
+    thread = answer.thread_id;
+    byId('visual').textContent = answer.image_answer || '—';
+    byId('knowledge').textContent = answer.knowledge_answer || '—';
+    byId('audit-panel').hidden = !answer.audit;
+    if (answer.audit) byId('audit').textContent = JSON.stringify(answer.audit, null, 2);
+    if (answer.audit?.mask_source === 'maira') {
+      const region = answer.audit.localization;
+      const message = {
+        present: region.boxes_xyxy.length ? '报告提到心影增大，已生成候选框' : '报告提到心影增大，候选框为空',
+        uncertain: '报告对心影增大的描述不确定',
+        no_positive_mention: '报告未提取到明确的心影增大描述',
+        not_precomputed: '该影像尚无预先生成的 MAIRA-2 结果'
+      }[region.finding_status];
+      byId('finding').textContent = 'MAIRA-2 · ' + message;
+      byId('finding').hidden = false;
+    }
+    if (answer.audit && 'learned_risk_score' in answer.audit) {
+      const score = answer.audit.learned_risk_score;
+      byId('risk').textContent = score === null
+        ? '视觉证据风险 · 缺少审计特征，无法评分'
+        : '视觉证据风险 · ' + score.toFixed(3) + '（0–1）';
+      byId('risk').hidden = false;
+    }
+    const list = byId('sources'); list.replaceChildren();
+    for (const hit of answer.passages) {
+      const item = document.createElement('li');
+      const url = document.createElement('a');
+      const parsed = new URL(hit.source, location.href);
+      if (['https:', 'http:'].includes(parsed.protocol)) url.href = parsed.href;
+      url.textContent = `${hit.title} · ${hit.locator}`;
+      item.append(url); list.append(item);
+    }
+    byId('status').textContent = [answer.intent, `${answer.latency_ms} ms`, ...answer.status].join(' · ');
+  } catch (error) { byId('status').textContent = error.message; }
+  finally { byId('send').disabled = byId('next').disabled = false; }
+});
+</script>
+</body>
+</html>

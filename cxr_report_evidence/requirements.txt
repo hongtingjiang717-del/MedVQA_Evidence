@@ -1,0 +1,2 @@
+-r ../evidence/requirements-research.txt
+rouge-score==0.1.2

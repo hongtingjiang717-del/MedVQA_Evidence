@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedVQA Evidence · 胸片报告审计</title>
+<style>
+  :root { color-scheme: light; font: 15px/1.6 system-ui, sans-serif; color: #18282b; background: #f1f5f5; }
+  * { box-sizing: border-box; } body { margin: 0; } header { background: #102a2c; color: #effbfa; }
+  .wrap { width: min(1400px, calc(100% - 40px)); margin: auto; } header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 0; }
+  h1 { margin: 0; font-size: clamp(1.1rem, 2.1vw, 1.5rem); letter-spacing: -.025em; } h2, h3 { margin: 0 0 10px; line-height: 1.3; } h3 { font-size: .94rem; }
+  nav { display: flex; flex-wrap: wrap; gap: 7px; } nav button { background: #1d393b; border-color: #436566; color: #f8ffff; } nav button[aria-pressed="true"] { background: #f1fbfa; color: #102a2c; }
+  main { padding: 24px 0 52px; } .toolbar { display: flex; align-items: end; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  label { display: grid; gap: 5px; font-size: .85rem; font-weight: 650; } button, input, select, textarea { font: inherit; }
+  select, input, textarea, button { border: 1px solid #b6cdcb; border-radius: 7px; padding: 7px 11px; background: white; color: inherit; }
+  button { cursor: pointer; } button:disabled { opacity: .57; cursor: wait; } .primary { background: #075b59; border-color: #075b59; color: white; }
+  .columns { display: grid; gap: 20px; grid-template-columns: minmax(260px, 2fr) minmax(0, 3fr); align-items: start; }
+  .panel { background: white; border: 1px solid #cfdbdb; border-radius: 11px; padding: 16px; min-width: 0; }
+  .viewport { min-height: 230px; border-radius: 7px; overflow: hidden; display: grid; place-items: center; background: #111e20; color: #b8c7c7; }
+  canvas { display: block; height: auto; width: 100%; } .view-buttons { display: flex; gap: 6px; margin: 10px 0 3px; flex-wrap: wrap; }
+  .reports { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); } .reports article { background: #f3f8f8; border-top: 3px solid #83aaa5; padding: 12px; }
+  .reports .reference { grid-column: 1 / -1; }
+  .report-text { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .89rem; } .facts { margin-top: 17px; }
+  .claims { display: flex; gap: 7px; flex-wrap: wrap; } .claims button { white-space: normal; text-align: left; font-size: .84rem; } .claims button[aria-pressed="true"] { border: 2px solid #087369; color: #075b59; }
+  .subtle, #status, #knowledge-mode { color: #486263; font-size: .86rem; } .subtle { margin: 5px 0; } #status { min-height: 1.7em; margin: 0 0 11px; }
+  #details { margin-top: 12px; font-size: .9rem; border-top: 1px solid #dbe7e6; padding-top: 9px; } #details p { margin: 4px 0; }
+  .score-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; margin: 8px 0; }
+  .score-table th, .score-table td { text-align: left; padding: 4px 6px; border-bottom: 1px solid #dbe7e6; }
+  .knowledge-panel { max-width: 760px; } textarea { width: 100%; min-height: 90px; resize: vertical; } #knowledge-reply { white-space: pre-wrap; } a { color: #075b59; }
+  details p { margin: 4px 0 10px; } [hidden] { display: none !important; }
+  @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .wrap { width: calc(100% - 24px); } .reports { grid-template-columns: 1fr; } header .wrap { align-items: flex-start; flex-direction: column; gap: 9px; } }
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>MedVQA Evidence · 胸片报告审计</h1><nav aria-label="功能">
+  <button id="tab-study" aria-pressed="true">报告与证据</button><button id="tab-knowledge" aria-pressed="false">知识问答</button>
+</nav></div></header>
+<main class="wrap">
+<section id="study">
+  <div class="toolbar">
+    <label>归档病例<select id="case-id"><option value="">选择病例</option></select></label>
+    <button id="load" class="primary">查看报告</button>
+  </div>
+  <p id="coverage" class="subtle" hidden></p>
+  <div class="toolbar" id="live-controls" hidden>
+    <label>本地正位胸片<input type="file" accept="image/jpeg,image/png" id="upload"></label><button id="run">生成报告并审计</button>
+  </div>
+  <p id="status" role="status"></p>
+  <div class="columns">
+    <section class="panel"><h2>影像</h2>
+      <div class="viewport"><span id="image-help">选择病例后查看影像</span><canvas id="canvas" hidden aria-label="胸片与候选框"></canvas></div>
+      <div class="view-buttons"><button data-view="original">原图</button><button data-view="target">目标模糊</button><button data-view="control">对照模糊</button></div>
+      <p class="subtle" id="image-note"></p>
+    </section>
+    <section class="panel"><div class="reports">
+      <article class="reference"><h3>参考报告</h3><div class="report-text" id="reference">—</div></article>
+      <article><h3>Base · 原图＋文本</h3><div class="report-text" id="base_image">—</div></article>
+      <article><h3>Base · 仅文本</h3><div class="report-text" id="base_text">—</div></article>
+      <article><h3>LoRA · 原图＋文本</h3><div class="report-text" id="lora_image">—</div></article>
+      <article><h3>LoRA · 仅文本</h3><div class="report-text" id="lora_text">—</div></article>
+    </div><div class="facts"><h3>证据审计</h3>
+      <p class="subtle" id="claim-status" role="status">选择病例后查看证据审计。</p>
+      <label>审计模型<select id="model" disabled><option value="lora">Qwen3-VL＋LoRA</option><option value="base">Base Qwen3-VL</option></select></label>
+      <label>审计输入<select id="claim-mode" disabled><option value="image">原图＋文本</option><option value="text">仅文本</option></select></label>
+      <details class="subtle"><summary>怎么看支持分和对照差值？</summary>
+        <p>核查器用同一句发现分别检查原图、目标模糊图和对照模糊图。每张图的支持、矛盾、证据不足三项分数加起来是 1。</p>
+        <p>对照支持分减目标支持分为正，表示核查器对目标区域的模糊更敏感。这些分数描述核查器对图像变化的反应。</p>
+      </details>
+      <div class="claims" id="claims"></div><div id="details" hidden></div>
+    </div></section>
+  </div>
+</section>
+<section id="knowledge" class="panel knowledge-panel" hidden><h2>医学影像知识问答</h2>
+  <form id="ask"><label>问题<textarea id="question" minlength="3" maxlength="800" required placeholder="例如 How does a CT scanner reconstruct a slice?"></textarea></label><button class="primary" type="submit">查询资料</button></form>
+  <p id="knowledge-mode" role="status"></p><div id="knowledge-reply"></div><ol id="sources"></ol>
+</section>
+</main>
+<script>
+const el = id => document.getElementById(id);
+let result = null, selected = null, localImage = null, drawVersion = 0, caseBusy = false;
+const reasons = {over_limit:'超过本次定位条数上限', nonlocal_claim:'缺少适合局部干预的区域', no_box:'没有可用的候选框', malformed_output:'MAIRA-2 输出格式不完整，未取得候选框', no_control:'无法构造匹配的对照区域', probed:'已获得审计特征'};
+const viewLabels = {FRONTAL:'正位', PA:'正位（PA）', AP:'正位（AP）'};
+const splitLabels = {train:'训练集', validation:'验证集', test:'测试集'};
+const fixed = value => value == null ? '—' : value.toFixed(3);
+const encode = encodeURIComponent;
+const viewButtons = [...document.querySelectorAll('button[data-view]')];
+
+async function request(path, options) {
+  const response = await fetch(path, options);
+  if (!response.ok) {
+    const body = await response.json().catch(() => null);
+    throw Error(typeof body?.detail === 'string' ? body.detail : `请求失败 (${response.status})`);
+  }
+  return response.json();
+}
+
+function toggle(screen) {
+  for (const name of ['study', 'knowledge']) {
+    el(name).hidden = screen !== name;
+    el(`tab-${name}`).setAttribute('aria-pressed', screen === name);
+  }
+}
+el('tab-study').onclick = () => toggle('study');
+el('tab-knowledge').onclick = () => toggle('knowledge');
+
+function draw(view = 'original') {
+  if (!result) return;
+  const version = ++drawVersion, canvas = el('canvas'), surface = new Image();
+  const params = new URLSearchParams({variant:view});
+  if (selected) params.set('claim', selected.claim_id);
+  surface.onload = () => {
+    if (version !== drawVersion) return;
+    const scale = Math.min(1, 1000 / Math.max(surface.width, surface.height));
+    canvas.width = Math.round(surface.width * scale); canvas.height = Math.round(surface.height * scale);
+    const ctx = canvas.getContext('2d'); ctx.drawImage(surface, 0, 0, canvas.width, canvas.height);
+    if (view === 'original' && selected) {
+      const [w, h] = result.preview_size;
+      ctx.strokeStyle = '#42ffd0'; ctx.lineWidth = 3;
+      for (const [x1,y1,x2,y2] of selected.boxes) ctx.strokeRect(x1/w*canvas.width,y1/h*canvas.height,(x2-x1)/w*canvas.width,(y2-y1)/h*canvas.height);
+    }
+    el('image-help').hidden = true; canvas.hidden = false;
+    el('image-note').textContent = {original:selected?.boxes?.length ? '原图 · 绿色框标出候选区域' : '原图', target:'候选区域模糊', control:'同面积异位置对照模糊'}[view];
+  };
+  surface.onerror = () => { if (version === drawVersion) el('image-note').textContent = '影像预览读取失败'; };
+  surface.src = localImage ? (view === 'original' ? localImage : selected.previews[view]) : `/api/image/${encode(result.study_id)}?${params}`;
+}
+for (const button of viewButtons) button.onclick = () => draw(button.dataset.view);
+function select(item) {
+  selected = item;
+  const panel = el('details'); panel.replaceChildren(); panel.hidden = !item;
+  for (const button of el('claims').children) button.setAttribute('aria-pressed', button.dataset.id === item?.claim_id);
+  for (const button of viewButtons) button.disabled = button.dataset.view !== 'original' && !(item?.control_match && (!localImage || item.previews));
+  if (item) {
+    const status = document.createElement('p');
+    status.textContent = `审计状态 · ${reasons[item.probe_status] || item.probe_status}`;
+    panel.append(status);
+    if (item.checks) {
+      const table = document.createElement('table'); table.className = 'score-table';
+      table.createCaption().textContent = '核查器的三项分数';
+      const head = table.createTHead().insertRow();
+      for (const label of ['输入','支持','矛盾','证据不足']) {
+        const cell = document.createElement('th'); cell.scope = 'col'; cell.textContent = label; head.append(cell);
+      }
+      const body = table.createTBody();
+      for (const [key, label] of [['original','原图'],['target','目标模糊'],['control','对照模糊']]) {
+        const row = body.insertRow();
+        for (const value of [label, ...['support','conflict','uncertain'].map(name => fixed(item.checks[key][name]))]) row.insertCell().textContent = value;
+      }
+      const difference = document.createElement('p');
+      difference.textContent = `对照支持分减目标支持分 · ${fixed(item.features.relative_support_drop)}（${item.control_match === 'same_shape' ? '同形同面积' : '同面积'}对照）`;
+      panel.append(table, difference);
+    }
+  }
+  draw();
+}
+function render() {
+  if (!result) return;
+  const model = el('model').value;
+  for (const variant of ['base_image', 'base_text', 'lora_image', 'lora_text'])
+    el(variant).textContent = result.reports[variant] ?? '归档中暂无此组报告';
+  el('reference').textContent = result.reference || '此影像未附参考报告';
+  const list = el('claims'); list.replaceChildren();
+  const hasClaims = result.claims.length > 0;
+  el('model').disabled = el('claim-mode').disabled = !hasClaims;
+  const active = `${model}_${el('claim-mode').value}`;
+  for (const item of result.claims.filter(item => item.variant === active)) {
+    const button = document.createElement('button'); button.dataset.id = item.claim_id;
+    button.setAttribute('aria-pressed','false'); button.textContent = item.claim; button.onclick = () => select(item); list.append(button);
+  }
+  const status = el('claim-status');
+  if (!result.audit_loaded) {
+    status.textContent = '这批报告缺少 probes.json。完成短语定位和反事实核查后，这里会显示候选框和分数。';
+  } else if (!hasClaims) {
+    status.textContent = '已加载审计文件，当前病例没有审计条目。';
+  } else {
+    status.textContent = list.children.length ? '选择一条发现，查看候选框和核查结果。' : '当前这组报告没有审计条目。';
+  }
+  select(null);
+}
+el('model').onchange = render; el('claim-mode').onchange = render;
+async function loadCase(path, options, file) {
+  if (caseBusy) return;
+  caseBusy = true; el('load').disabled = el('run').disabled = true;
+  el('status').textContent = file ? '正在依次运行 Qwen、MAIRA-2 和视觉核查器…' : '正在读取病例…';
+  try {
+    const data = await request(path, options);
+    if (localImage) URL.revokeObjectURL(localImage);
+    localImage = file ? URL.createObjectURL(file) : null; result = data;
+    el('model').value = 'lora_image' in result.reports ? 'lora' : 'base'; render();
+    el('status').textContent = file ? '本次上传处理完成' : `病例 ${data.study_id} · ${viewLabels[data.view] || data.view} · ${splitLabels[data.split] || data.split}`;
+  } catch (error) { el('status').textContent = error.message; }
+  finally { caseBusy = false; el('load').disabled = el('run').disabled = false; }
+}
+el('load').onclick = () => {
+  const id = el('case-id').value;
+  if (id) loadCase(`/api/study/${encode(id)}`); else el('status').textContent = '请先选择病例。';
+};
+el('run').onclick = () => {
+  const file = el('upload').files[0];
+  if (file) loadCase('/api/live', {method:'POST', body:file}, file); else el('status').textContent = '请选择 JPG 或 PNG 胸片。';
+};
+el('ask').onsubmit = async event => {
+  event.preventDefault(); const button = el('ask').querySelector('button'); button.disabled = true;
+  el('knowledge-mode').textContent = '正在检索…'; el('knowledge-reply').textContent = ''; el('sources').replaceChildren();
+  try {
+    const data = await request('/api/knowledge', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({question:el('question').value.trim()})});
+    el('knowledge-mode').textContent = {generated:'检索增强回答', extracts:'检索到的资料节选', unavailable:'知识库未返回相关资料'}[data.mode];
+    el('knowledge-reply').textContent = data.answer ?? '';
+    for (const hit of data.sources) {
+      const li = document.createElement('li'), summary = document.createElement('summary'), detail = document.createElement('details'), p = document.createElement('p');
+      summary.textContent = `${hit.title} · ${hit.locator}`; p.textContent = hit.text; detail.append(summary, p);
+      try {
+        const url = new URL(hit.source);
+        if (['http:', 'https:'].includes(url.protocol)) {
+          const link = document.createElement('a'); link.textContent = '打开来源'; link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer'; detail.append(link);
+        }
+      } catch { /* Some local sources have no external link. */ }
+      li.append(detail); el('sources').append(li);
+    }
+  } catch (error) { el('knowledge-mode').textContent = error.message; }
+  finally { button.disabled = false; }
+};
+request('/api/studies').then(data => {
+  el('live-controls').hidden = !data.live;
+  if (data.coverage) {
+    const {planned, complete, counts, has_probes, device} = data.coverage;
+    const coverage = el('coverage');
+    coverage.hidden = false;
+    coverage.textContent = `${device === 'cpu' ? 'CPU 归档 · ' : ''}四组齐全 ${complete}/${planned} 例 · Base 看图 ${counts.base_image} / 仅文本 ${counts.base_text} · LoRA 看图 ${counts.lora_image} / 仅文本 ${counts.lora_text}${has_probes ? '' : ' · 未加载审计结果'}`;
+  }
+  for (const study of data.studies) {
+    const option = document.createElement('option'); option.value = study.id;
+    option.textContent = `${study.id} · ${viewLabels[study.view] || study.view} · ${splitLabels[study.split] || study.split}`; el('case-id').append(option);
+  }
+  const preferred = new URLSearchParams(location.search).get('study');
+  if (data.studies.some(study => study.id === preferred)) {
+    el('case-id').value = preferred;
+    el('load').click();
+  } else if (!data.studies.length) el('status').textContent = '尚未加载归档病例。';
+  select(null);
+}).catch(error => { el('status').textContent = error.message; });
+</script>
+</body>
+</html>

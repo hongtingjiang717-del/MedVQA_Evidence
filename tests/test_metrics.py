@@ -1,5 +1,5 @@
 import unittest
-from medvqa import normalize_answer, exact_match, token_f1, prompt_for
+from evidence.vqa.model import normalize_answer, exact_match, token_f1, prompt_for
 
 class MetricTests(unittest.TestCase):
     def test_normalize(self):

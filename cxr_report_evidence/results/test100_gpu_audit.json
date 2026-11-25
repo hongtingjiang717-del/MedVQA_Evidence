@@ -1,0 +1,196 @@
+{
+  "source": "artifacts/results/cxr-openi-test100-gpu/probe-summary.json",
+  "source_hashes": {
+    "reports.json": "b609b804930dd3e40a6c80df109da5ceb95ff3cfa63ef8a4aa7b4fd5e23dc631",
+    "ground.json": "0f7c99965e143a64f3631f3de91dc0c71488826722970e73d0a6dff45ed522d4",
+    "probes.json": "bece75ba222d19d680f915013efa2fedcd2b7821e3d9f703d3711568d74f1936",
+    "probe-summary.json": "689da52b2fd4f273ac07f6f08deeda17db8743a13c145483c576dc778d001ed5"
+  },
+  "protocol": {
+    "version": 1,
+    "verifier_config_sha256": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+    "maira_config_sha256": "dbfdaf64818f638de41522b7bcadaf7607e7f8828356e554191a8d05d6862fc8",
+    "device": "cuda",
+    "image_edge": 768,
+    "radius_fraction": 0.025,
+    "alignment": false,
+    "max_findings_per_report": 4
+  },
+  "overall": {
+    "test_studies": 100,
+    "reports": 400,
+    "findings": 3711,
+    "eligible_for_grounding": 1084,
+    "grounded": 738,
+    "with_matched_control": 585,
+    "coverage": 0.1576394502829426,
+    "matched_control_rate_among_eligible": 0.5396678966789668,
+    "studies_with_matched_control": 100,
+    "ground_status_counts": {
+      "no_box": 344,
+      "grounded": 738,
+      "over_limit": 2224,
+      "nonlocal_claim": 403,
+      "malformed_output": 2
+    },
+    "probe_status_counts": {
+      "no_box": 344,
+      "probed": 585,
+      "over_limit": 2224,
+      "nonlocal_claim": 403,
+      "no_control": 153,
+      "malformed_output": 2
+    },
+    "matched_control_types": {
+      "same_shape": 562,
+      "same_area": 23
+    }
+  },
+  "by_split": {
+    "test": {
+      "base_image": {
+        "study_count": 100,
+        "findings": 1496,
+        "with_matched_control": 183,
+        "coverage": 0.12232620320855615,
+        "probe_status_counts": {
+          "no_box": 137,
+          "probed": 183,
+          "over_limit": 1096,
+          "no_control": 31,
+          "nonlocal_claim": 48,
+          "malformed_output": 1
+        },
+        "mean_control_minus_target_support": 0.02489597298076126,
+        "median_control_minus_target_support": -7.671640105400002e-07,
+        "eligible_for_grounding": 352,
+        "matched_control_rate_among_eligible": 0.5198863636363636,
+        "audited_studies": 91,
+        "positive_difference": 91,
+        "negative_difference": 92,
+        "zero_difference": 0,
+        "mean_support_by_view": {
+          "original": 0.4828628539801885,
+          "target": 0.3211708023126463,
+          "control": 0.34606677529340757
+        }
+      },
+      "base_text": {
+        "study_count": 100,
+        "findings": 1499,
+        "with_matched_control": 299,
+        "coverage": 0.19946631087391595,
+        "probe_status_counts": {
+          "probed": 299,
+          "nonlocal_claim": 80,
+          "over_limit": 1099,
+          "no_box": 18,
+          "no_control": 3
+        },
+        "mean_control_minus_target_support": 0.008590583785467837,
+        "median_control_minus_target_support": -2.004128418775508e-06,
+        "eligible_for_grounding": 320,
+        "matched_control_rate_among_eligible": 0.934375,
+        "audited_studies": 99,
+        "positive_difference": 145,
+        "negative_difference": 154,
+        "zero_difference": 0,
+        "mean_support_by_view": {
+          "original": 0.2930090213628126,
+          "target": 0.20033510926212608,
+          "control": 0.20892569304759392
+        }
+      },
+      "lora_image": {
+        "study_count": 100,
+        "findings": 349,
+        "with_matched_control": 41,
+        "coverage": 0.1174785100286533,
+        "probe_status_counts": {
+          "nonlocal_claim": 148,
+          "no_box": 100,
+          "no_control": 50,
+          "probed": 41,
+          "over_limit": 10
+        },
+        "mean_control_minus_target_support": 0.046495714647590364,
+        "median_control_minus_target_support": 0.00027962011517956853,
+        "eligible_for_grounding": 191,
+        "matched_control_rate_among_eligible": 0.21465968586387435,
+        "audited_studies": 33,
+        "positive_difference": 24,
+        "negative_difference": 17,
+        "zero_difference": 0,
+        "mean_support_by_view": {
+          "original": 0.4363128641643703,
+          "target": 0.3634461682760469,
+          "control": 0.40994188292363726
+        }
+      },
+      "lora_text": {
+        "study_count": 100,
+        "findings": 367,
+        "with_matched_control": 62,
+        "coverage": 0.16893732970027248,
+        "probe_status_counts": {
+          "no_box": 89,
+          "nonlocal_claim": 127,
+          "no_control": 69,
+          "probed": 62,
+          "over_limit": 19,
+          "malformed_output": 1
+        },
+        "mean_control_minus_target_support": -0.013835655966996884,
+        "median_control_minus_target_support": -2.424289777991362e-05,
+        "eligible_for_grounding": 221,
+        "matched_control_rate_among_eligible": 0.28054298642533937,
+        "audited_studies": 40,
+        "positive_difference": 28,
+        "negative_difference": 34,
+        "zero_difference": 0,
+        "mean_support_by_view": {
+          "original": 0.22735519914266455,
+          "target": 0.1730254690376515,
+          "control": 0.15918981307065463
+        }
+      }
+    }
+  },
+  "illustrative_case": {
+    "claim_id": "iu-CXR227:lora_image:1",
+    "study_id": "iu-CXR227",
+    "variant": "lora_image",
+    "claim": "The heart is enlarged.",
+    "boxes": [
+      [
+        186,
+        195,
+        451,
+        371
+      ]
+    ],
+    "checks": {
+      "original": {
+        "support": 0.7847368717193604,
+        "conflict": 0.004054078832268715,
+        "uncertain": 0.21120907366275787
+      },
+      "target": {
+        "support": 0.00045737347682006657,
+        "conflict": 0.002049805596470833,
+        "uncertain": 0.9974929094314575
+      },
+      "control": {
+        "support": 0.7095801830291748,
+        "conflict": 0.0037235349882394075,
+        "uncertain": 0.28669631481170654
+      }
+    },
+    "features": {
+      "original_support": 0.7847368717193604,
+      "original_conflict": 0.004054078832268715,
+      "relative_support_drop": 0.7091228095523547
+    },
+    "control_match": "same_shape"
+  }
+}

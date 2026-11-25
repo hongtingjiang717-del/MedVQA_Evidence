@@ -1,0 +1,43 @@
+{
+  "source": "artifacts/gpu-run/results/gpu/maira_heart_audit.json",
+  "target": "cardiomegaly",
+  "device": "cuda",
+  "summary": {
+    "images": 57,
+    "images_with_cardiomegaly_box": 12,
+    "reported_cardiomegaly": 7,
+    "reported_uncertain": 0,
+    "matched_box_annotated_images": 5,
+    "precision_against_box_annotations": 0.7142857142857143,
+    "recall_on_box_annotated_images": 0.4166666666666667,
+    "mean_box_iou_on_annotated_images": 0.30931713608373573,
+    "box_hit_rate_at_0_5": 0.4166666666666667,
+    "annotated_images_with_no_prediction_box": 7
+  },
+  "summary_by_split": {
+    "validation": {
+      "images": 27,
+      "images_with_cardiomegaly_box": 6,
+      "reported_cardiomegaly": 3,
+      "reported_uncertain": 0,
+      "matched_box_annotated_images": 3,
+      "precision_against_box_annotations": 1.0,
+      "recall_on_box_annotated_images": 0.5,
+      "mean_box_iou_on_annotated_images": 0.36204480213968643,
+      "box_hit_rate_at_0_5": 0.5,
+      "annotated_images_with_no_prediction_box": 3
+    },
+    "test": {
+      "images": 30,
+      "images_with_cardiomegaly_box": 6,
+      "reported_cardiomegaly": 4,
+      "reported_uncertain": 0,
+      "matched_box_annotated_images": 2,
+      "precision_against_box_annotations": 0.5,
+      "recall_on_box_annotated_images": 0.3333333333333333,
+      "mean_box_iou_on_annotated_images": 0.25658947002778504,
+      "box_hit_rate_at_0_5": 0.3333333333333333,
+      "annotated_images_with_no_prediction_box": 4
+    }
+  }
+}

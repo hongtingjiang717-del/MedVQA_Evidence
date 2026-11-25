@@ -1,0 +1,43 @@
+{
+  "source": "artifacts/results/reorganized-audit-smoke.json",
+  "scope": "single local CPU smoke test after reorganization",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "device": "cpu",
+  "max_new_tokens": 12,
+  "split": "validation",
+  "qid": "10733",
+  "organ": "left lung",
+  "mask_source": "annotation",
+  "answer": "left lung",
+  "variants": {
+    "global": {
+      "answer": "left lung",
+      "persistence": 1.0
+    },
+    "box": {
+      "answer": "left lung",
+      "persistence": 1.0
+    },
+    "mask": {
+      "answer": "left lung",
+      "persistence": 1.0
+    },
+    "control": {
+      "answer": "left lung",
+      "persistence": 1.0
+    }
+  },
+  "region": {
+    "target_bbox_xyxy": [
+      268,
+      277,
+      362,
+      323
+    ],
+    "target_pixels": 933,
+    "control_pixels": 933,
+    "control_match": "same_shape"
+  },
+  "target_specific_change": 0.0,
+  "seconds": 171.12874149999698
+}

@@ -1,0 +1,11 @@
+[
+  {"question":"How does a CT scanner reconstruct an axial slice?", "relevant":["ct-principle"]},
+  {"question":"Why do structures at different depths overlap on an ordinary projection?", "relevant":["xray-projection"]},
+  {"question":"Which imaging techniques avoid ionizing radiation?", "relevant":["non-ionizing"]},
+  {"question":"What makes the signals that an MRI scanner measures?", "relevant":["mri-principle"]},
+  {"question":"How does a sonography transducer turn echoes into a picture?", "relevant":["us-principle"]},
+  {"question":"How is Doppler used to assess blood flow?", "relevant":["us-doppler"]},
+  {"question":"Which X-ray technique shows motion in real time?", "relevant":["fluoro-live"]},
+  {"question":"What is the function of an imaging contrast agent?", "relevant":["contrast"]},
+  {"question":"Compare projection radiography and computed tomography CT cross-sectional imaging.", "relevant":["xray-projection","ct-principle"]}
+]

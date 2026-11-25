@@ -1,0 +1,6 @@
+# Use a separate environment with an existing PyTorch installation.
+transformers==4.51.3
+pillow
+# SentencePiece 0.2.3 generates its Python bindings with Protobuf 7.36.1.
+protobuf==7.36.1
+sentencepiece==0.2.3

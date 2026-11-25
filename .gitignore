@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 .venv/
+.venv-*/
 venv/
 .vscode/
 .idea/
@@ -12,6 +13,14 @@ venv/
 !.env.example
 .local_archive/
 .resume_work/
+/archive/
+/docs/results.md
+/slake_vqa/TRAINING_NOTES.md
+/Visually_Irrelevant_reader/
+/Visually Irrelevant Hallucinations in Medical.pdf
+/slake_vqa/artifacts/
+/cxr_report_evidence/artifacts/
+/evidence/runtime/
 # Model and dataset downloads
 *.safetensors
 *.bin
@@ -19,7 +28,7 @@ venv/
 *.pth
 models/
 data/
-datasets/
+/datasets/
 .cache/
 .huggingface/
 hf_cache/
@@ -27,11 +36,10 @@ checkpoints/
 *.zip
 *.tar
 *.tar.gz
-# Curated aggregate statistics only
-results/*
-!results/.gitkeep
-!results/day4_validation_summary.json
-!results/exploratory_50_summary.json
+/cxr-openi-formal-*/
+/cxr-openi-formal-*.tar.gz.files.txt
+# Historical root output; public summaries live in the subprojects.
+/results/
 demo_example/
 demo_examples/
 *.log

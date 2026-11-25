@@ -1,0 +1,54 @@
+{
+  "ct_multi_liver_audit": {
+    "source": "artifacts/gpu-run/results/gpu/ct_multi_liver_audit.json",
+    "split": "validation",
+    "qid": "9962",
+    "organ": "liver",
+    "mask_source": "unet",
+    "confidence": 0.8040019218833165,
+    "region": {
+      "target_bbox_xyxy": [
+        70,
+        162,
+        304,
+        348
+      ],
+      "target_pixels": 10215,
+      "control_pixels": 10215,
+      "control_match": "same_shape"
+    },
+    "target_specific_change": 0.33333333333333337,
+    "persistence": {
+      "global": 0.0,
+      "box": 1.0,
+      "mask": 0.6666666666666666,
+      "control": 1.0
+    }
+  },
+  "cardiomegaly_audit_example": {
+    "source": "artifacts/gpu-run/results/gpu/cardiomegaly_audit_example.json",
+    "split": "validation",
+    "qid": "9923",
+    "organ": "cardiomegaly",
+    "mask_source": "maira",
+    "confidence": 0.9510876597571909,
+    "region": {
+      "target_bbox_xyxy": [
+        465,
+        517,
+        947,
+        885
+      ],
+      "target_pixels": 177376,
+      "control_pixels": 177376,
+      "control_match": "same_shape"
+    },
+    "target_specific_change": 0.0,
+    "persistence": {
+      "global": 1.0,
+      "box": 1.0,
+      "mask": 1.0,
+      "control": 1.0
+    }
+  }
+}

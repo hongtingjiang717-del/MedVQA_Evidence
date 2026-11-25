@@ -1,0 +1,2611 @@
+{
+  "source": "artifacts/gpu-run/results/gpu/unet_ct_multi_summary.json",
+  "dataset": "BoKelvin/SLAKE",
+  "modality": "CT",
+  "organs": [
+    "left lung",
+    "right lung",
+    "heart",
+    "liver"
+  ],
+  "device": "cuda",
+  "size": 96,
+  "epochs": 64,
+  "best_epoch": 63,
+  "positive_images": {
+    "train": {
+      "left lung": 25,
+      "right lung": 27,
+      "heart": 17,
+      "liver": 85
+    },
+    "validation": {
+      "left lung": 5,
+      "right lung": 5,
+      "heart": 3,
+      "liver": 15
+    },
+    "test": {
+      "left lung": 5,
+      "right lung": 5,
+      "heart": 3,
+      "liver": 18
+    }
+  },
+  "loss": "cross-entropy + foreground macro soft Dice",
+  "cross_entropy_class_weights": {
+    "background": 1.0,
+    "left lung": 17.37278175354004,
+    "right lung": 14.737292289733887,
+    "heart": 17.482954025268555,
+    "liver": 6.241889476776123
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.295834488868713,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 37,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 1.7552493286132813,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 1.7576184129714967,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 1.6565919780731202,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 1.6876967763900756,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 1.6318210029602052,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 1.5813136577606202,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 1.5788328456878662,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 1.5801157569885254,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          }
+        },
+        "macro_dice": 0.0,
+        "macro_iou": 0.0
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 1.5495420265197755,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.2871638511212396,
+            "iou": 0.20759379606068334
+          }
+        },
+        "macro_dice": 0.0717909627803099,
+        "macro_iou": 0.051898449015170836
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 1.5145940256118775,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3390177715869387,
+            "iou": 0.2267350687554787
+          }
+        },
+        "macro_dice": 0.08475444289673467,
+        "macro_iou": 0.05668376718886967
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 1.4566858673095704,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3565873918303761,
+            "iou": 0.2618377098467946
+          }
+        },
+        "macro_dice": 0.08914684795759402,
+        "macro_iou": 0.06545942746169865
+      }
+    },
+    {
+      "epoch": 13,
+      "loss": 1.4761251592636109,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3506164947362782,
+            "iou": 0.24083877503793022
+          }
+        },
+        "macro_dice": 0.08765412368406955,
+        "macro_iou": 0.060209693759482555
+      }
+    },
+    {
+      "epoch": 14,
+      "loss": 1.4241145324707032,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.35165068577495057,
+            "iou": 0.25626632875776234
+          }
+        },
+        "macro_dice": 0.08791267144373764,
+        "macro_iou": 0.06406658218944059
+      }
+    },
+    {
+      "epoch": 15,
+      "loss": 1.412504668235779,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 26,
+            "dice": 0.345900573508795,
+            "iou": 0.25480833660184893
+          }
+        },
+        "macro_dice": 0.08647514337719875,
+        "macro_iou": 0.06370208415046223
+      }
+    },
+    {
+      "epoch": 16,
+      "loss": 1.3817655563354492,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.3319293908979206,
+            "iou": 0.2415184252443044
+          }
+        },
+        "macro_dice": 0.08298234772448015,
+        "macro_iou": 0.0603796063110761
+      }
+    },
+    {
+      "epoch": 17,
+      "loss": 1.4232070207595826,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.37988498582787306,
+            "iou": 0.2647008955706518
+          }
+        },
+        "macro_dice": 0.09497124645696826,
+        "macro_iou": 0.06617522389266295
+      }
+    },
+    {
+      "epoch": 18,
+      "loss": 1.4324193286895752,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.32893262543813767,
+            "iou": 0.21587589705027008
+          }
+        },
+        "macro_dice": 0.08223315635953442,
+        "macro_iou": 0.05396897426256752
+      }
+    },
+    {
+      "epoch": 19,
+      "loss": 1.8052446508407594,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.26788670547041893,
+            "iou": 0.18321241565899957
+          }
+        },
+        "macro_dice": 0.06697167636760473,
+        "macro_iou": 0.04580310391474989
+      }
+    },
+    {
+      "epoch": 20,
+      "loss": 1.5974894857406616,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.40015881246085655,
+            "iou": 0.2916328962809788
+          }
+        },
+        "macro_dice": 0.10003970311521414,
+        "macro_iou": 0.0729082240702447
+      }
+    },
+    {
+      "epoch": 21,
+      "loss": 1.5601740407943725,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3994413406865607,
+            "iou": 0.28684516433427226
+          }
+        },
+        "macro_dice": 0.09986033517164017,
+        "macro_iou": 0.07171129108356807
+      }
+    },
+    {
+      "epoch": 22,
+      "loss": 1.50469877243042,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.334506070480783,
+            "iou": 0.2590150695189039
+          }
+        },
+        "macro_dice": 0.08362651762019575,
+        "macro_iou": 0.06475376737972598
+      }
+    },
+    {
+      "epoch": 23,
+      "loss": 1.428209776878357,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.44524875869771735,
+            "iou": 0.32995098137806067
+          }
+        },
+        "macro_dice": 0.11131218967442934,
+        "macro_iou": 0.08248774534451517
+      }
+    },
+    {
+      "epoch": 24,
+      "loss": 1.3962178421020508,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.3453311625950389,
+            "iou": 0.2598274209415808
+          }
+        },
+        "macro_dice": 0.08633279064875972,
+        "macro_iou": 0.0649568552353952
+      }
+    },
+    {
+      "epoch": 25,
+      "loss": 1.384224352836609,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3441254017351869,
+            "iou": 0.23019479141320107
+          }
+        },
+        "macro_dice": 0.08603135043379673,
+        "macro_iou": 0.05754869785330027
+      }
+    },
+    {
+      "epoch": 26,
+      "loss": 1.440508279800415,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.3794780504844388,
+            "iou": 0.26576871010148423
+          }
+        },
+        "macro_dice": 0.0948695126211097,
+        "macro_iou": 0.06644217752537106
+      }
+    },
+    {
+      "epoch": 27,
+      "loss": 1.3999683141708374,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 24,
+            "dice": 0.32922352932927246,
+            "iou": 0.24692033993991142
+          }
+        },
+        "macro_dice": 0.08230588233231811,
+        "macro_iou": 0.061730084984977854
+      }
+    },
+    {
+      "epoch": 28,
+      "loss": 1.3564380598068237,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.34958825568091545,
+            "iou": 0.25662470406422255
+          }
+        },
+        "macro_dice": 0.08739706392022886,
+        "macro_iou": 0.06415617601605564
+      }
+    },
+    {
+      "epoch": 29,
+      "loss": 1.3569753646850586,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4081213765187751,
+            "iou": 0.29324348537273476
+          }
+        },
+        "macro_dice": 0.10203034412969378,
+        "macro_iou": 0.07331087134318369
+      }
+    },
+    {
+      "epoch": 30,
+      "loss": 1.3385191440582276,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.41739307880359394,
+            "iou": 0.31027039466044604
+          }
+        },
+        "macro_dice": 0.10434826970089849,
+        "macro_iou": 0.07756759866511151
+      }
+    },
+    {
+      "epoch": 31,
+      "loss": 1.2945069837570191,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 9,
+            "dice": 0.07079267010759048,
+            "iou": 0.03840164826122043
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.43447842843151335,
+            "iou": 0.32200690007962535
+          }
+        },
+        "macro_dice": 0.12631777463477595,
+        "macro_iou": 0.09010213708521145
+      }
+    },
+    {
+      "epoch": 32,
+      "loss": 1.2825937128067018,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 16,
+            "dice": 0.404640324627272,
+            "iou": 0.27477068866774806
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4450398189645729,
+            "iou": 0.3320776221954358
+          }
+        },
+        "macro_dice": 0.2124200358979612,
+        "macro_iou": 0.15171207771579598
+      }
+    },
+    {
+      "epoch": 33,
+      "loss": 1.291815996170044,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 29,
+            "dice": 0.5333576957308972,
+            "iou": 0.39762206709505027
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4636362632022893,
+            "iou": 0.3521064421801071
+          }
+        },
+        "macro_dice": 0.2492484897332966,
+        "macro_iou": 0.18743212731878933
+      }
+    },
+    {
+      "epoch": 34,
+      "loss": 1.2813830518722533,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.3865096146748806,
+            "iou": 0.29412582508250823
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4516972524306552,
+            "iou": 0.335488827265011
+          }
+        },
+        "macro_dice": 0.20955171677638396,
+        "macro_iou": 0.1574036630868798
+      }
+    },
+    {
+      "epoch": 35,
+      "loss": 1.2373532629013062,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 28,
+            "dice": 0.5003904751902851,
+            "iou": 0.3437233364863759
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4089576711514603,
+            "iou": 0.28748349748140944
+          }
+        },
+        "macro_dice": 0.22733703658543636,
+        "macro_iou": 0.15780170849194633
+      }
+    },
+    {
+      "epoch": 36,
+      "loss": 1.2416764068603516,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 29,
+            "dice": 0.5326643666881369,
+            "iou": 0.38186465332332786
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.5072246213351087,
+            "iou": 0.38940973923652833
+          }
+        },
+        "macro_dice": 0.2599722470058114,
+        "macro_iou": 0.19281859813996405
+      }
+    },
+    {
+      "epoch": 37,
+      "loss": 1.1999514818191528,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.527588554039869,
+            "iou": 0.3749904910025265
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 0,
+            "dice": 0.0,
+            "iou": 0.0
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.5110325054927322,
+            "iou": 0.39839688050715605
+          }
+        },
+        "macro_dice": 0.25965526488315027,
+        "macro_iou": 0.19334684287742065
+      }
+    },
+    {
+      "epoch": 38,
+      "loss": 1.1599938344955445,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 2,
+            "dice": 0.00409095144907278,
+            "iou": 0.0020571482370663275
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.5506261561871132,
+            "iou": 0.39245764023716484
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 3,
+            "dice": 0.009134828379148119,
+            "iou": 0.004602150997608022
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.5188488064423262,
+            "iou": 0.4008418922454804
+          }
+        },
+        "macro_dice": 0.27067518561441506,
+        "macro_iou": 0.1999897079293299
+      }
+    },
+    {
+      "epoch": 39,
+      "loss": 1.1341447830200195,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.09632787750958137,
+            "iou": 0.05236997241179033
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 24,
+            "dice": 0.6052918512305712,
+            "iou": 0.44941428947771994
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 35,
+            "dice": 0.17393197730982757,
+            "iou": 0.0959892237700914
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4788632733033945,
+            "iou": 0.35263612457472815
+          }
+        },
+        "macro_dice": 0.33860374483834366,
+        "macro_iou": 0.23760240255858245
+      }
+    },
+    {
+      "epoch": 40,
+      "loss": 1.1414572238922118,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 32,
+            "dice": 0.19809616918989112,
+            "iou": 0.12699188188900262
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 31,
+            "dice": 0.5244716285216695,
+            "iou": 0.36959830367744945
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 38,
+            "dice": 0.5518998565004631,
+            "iou": 0.4313702218531536
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.486335751139734,
+            "iou": 0.3608170407384548
+          }
+        },
+        "macro_dice": 0.44020085133793946,
+        "macro_iou": 0.3221943620395151
+      }
+    },
+    {
+      "epoch": 41,
+      "loss": 1.162573549747467,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.2637014133843573,
+            "iou": 0.16941868907040902
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.5533053526162305,
+            "iou": 0.4093590519039726
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 39,
+            "dice": 0.6064353134303162,
+            "iou": 0.5018868521916996
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.48488359255759106,
+            "iou": 0.3610842125769226
+          }
+        },
+        "macro_dice": 0.4770814179971238,
+        "macro_iou": 0.360437201435751
+      }
+    },
+    {
+      "epoch": 42,
+      "loss": 1.071399233341217,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.2710506221905589,
+            "iou": 0.1745180975057924
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.5403823495329578,
+            "iou": 0.4035495861732989
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.6382878532386312,
+            "iou": 0.5096792794906002
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.5419466082315408,
+            "iou": 0.42899474926947206
+          }
+        },
+        "macro_dice": 0.4979168582984222,
+        "macro_iou": 0.3791854281097909
+      }
+    },
+    {
+      "epoch": 43,
+      "loss": 1.0310535359382629,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 18,
+            "dice": 0.2846369859644025,
+            "iou": 0.19380599883512528
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 16,
+            "dice": 0.6502564216322038,
+            "iou": 0.48955863746780526
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.7350716375913352,
+            "iou": 0.5880350939174469
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.5415009609177944,
+            "iou": 0.43304360501606537
+          }
+        },
+        "macro_dice": 0.552866501526434,
+        "macro_iou": 0.4261108338091107
+      }
+    },
+    {
+      "epoch": 44,
+      "loss": 1.0477121257781983,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 37,
+            "dice": 0.40696177011648554,
+            "iou": 0.298177151199896
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.738503995045653,
+            "iou": 0.6023742721290803
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.6982866084351186,
+            "iou": 0.5398873060301497
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.5538081070250458,
+            "iou": 0.44807005908831465
+          }
+        },
+        "macro_dice": 0.5993901201555757,
+        "macro_iou": 0.4721271971118602
+      }
+    },
+    {
+      "epoch": 45,
+      "loss": 1.068686900138855,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.24797612179154457,
+            "iou": 0.18919677921928799
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.7604108505865993,
+            "iou": 0.6324278420570091
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.5661695006914116,
+            "iou": 0.4203342122983832
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 9,
+            "dice": 0.4843391823672805,
+            "iou": 0.3817597897734884
+          }
+        },
+        "macro_dice": 0.514723913859209,
+        "macro_iou": 0.40592965583704216
+      }
+    },
+    {
+      "epoch": 46,
+      "loss": 1.0226225090026855,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 28,
+            "dice": 0.2354969445412459,
+            "iou": 0.17236577972992595
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.6587523020263986,
+            "iou": 0.5102432093833502
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 26,
+            "dice": 0.611759525220582,
+            "iou": 0.47824870196300406
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.49080411557799536,
+            "iou": 0.3692822165784815
+          }
+        },
+        "macro_dice": 0.49920322184155547,
+        "macro_iou": 0.3825349769136904
+      }
+    },
+    {
+      "epoch": 47,
+      "loss": 0.9710914874076844,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 28,
+            "dice": 0.2055044445295392,
+            "iou": 0.13136186487876425
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 30,
+            "dice": 0.7803239202816907,
+            "iou": 0.6554159593276649
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 31,
+            "dice": 0.5988537324583472,
+            "iou": 0.4617038580583925
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 26,
+            "dice": 0.5560385550920531,
+            "iou": 0.4397779684773783
+          }
+        },
+        "macro_dice": 0.5351801630904076,
+        "macro_iou": 0.42206491268555
+      }
+    },
+    {
+      "epoch": 48,
+      "loss": 1.174341824054718,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 31,
+            "dice": 0.48551006270440844,
+            "iou": 0.38334320250434273
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.7701172393561261,
+            "iou": 0.648299091164387
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.5973205486428499,
+            "iou": 0.4482503609757178
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.588921342722821,
+            "iou": 0.4787091104259946
+          }
+        },
+        "macro_dice": 0.6104672983565513,
+        "macro_iou": 0.48965044126761054
+      }
+    },
+    {
+      "epoch": 49,
+      "loss": 0.9562004232406616,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 33,
+            "dice": 0.4866693812482258,
+            "iou": 0.3735741484088109
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.8027162285189732,
+            "iou": 0.6809435590886858
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.601736926202509,
+            "iou": 0.4710764324135633
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.5340533145018564,
+            "iou": 0.4073541707811486
+          }
+        },
+        "macro_dice": 0.6062939626178911,
+        "macro_iou": 0.48323707767305213
+      }
+    },
+    {
+      "epoch": 50,
+      "loss": 0.9908470416069031,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 33,
+            "dice": 0.4786795075011108,
+            "iou": 0.37544320826680405
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 17,
+            "dice": 0.6989572700168227,
+            "iou": 0.5993958445720672
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.7119975427972517,
+            "iou": 0.5577908505700715
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.6087846676425201,
+            "iou": 0.49997412042437317
+          }
+        },
+        "macro_dice": 0.6246047469894264,
+        "macro_iou": 0.508151005958329
+      }
+    },
+    {
+      "epoch": 51,
+      "loss": 0.8817692971229554,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 21,
+            "dice": 0.5037900082110712,
+            "iou": 0.4182028338005667
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 8,
+            "dice": 0.5735018723731817,
+            "iou": 0.4766707541202726
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 18,
+            "dice": 0.6353986677017363,
+            "iou": 0.4867915441412829
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 4,
+            "dice": 0.5093684320193932,
+            "iou": 0.4112810552513471
+          }
+        },
+        "macro_dice": 0.5555147450763456,
+        "macro_iou": 0.44823654682836733
+      }
+    },
+    {
+      "epoch": 52,
+      "loss": 0.8699875450134278,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 33,
+            "dice": 0.5522083179961431,
+            "iou": 0.4865681959455789
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 24,
+            "dice": 0.8541144086951151,
+            "iou": 0.7475683035229364
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 37,
+            "dice": 0.6596477417246893,
+            "iou": 0.4962635395294188
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 26,
+            "dice": 0.5352572023233858,
+            "iou": 0.41025013244323355
+          }
+        },
+        "macro_dice": 0.6503069176848333,
+        "macro_iou": 0.5351625428602919
+      }
+    },
+    {
+      "epoch": 53,
+      "loss": 0.9081318712234497,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 32,
+            "dice": 0.5263396131128824,
+            "iou": 0.4158041651336665
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.8862503086777306,
+            "iou": 0.7982006090195312
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 34,
+            "dice": 0.6686466333694181,
+            "iou": 0.5114788757233962
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.5014103851823689,
+            "iou": 0.371758417220283
+          }
+        },
+        "macro_dice": 0.6456617350856,
+        "macro_iou": 0.5243105167742192
+      }
+    },
+    {
+      "epoch": 54,
+      "loss": 0.8721688604354858,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 15,
+            "dice": 0.629599544189512,
+            "iou": 0.48979094400817696
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 10,
+            "dice": 0.773791433860738,
+            "iou": 0.6411979351636703
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 16,
+            "dice": 0.6767911038102602,
+            "iou": 0.533195021320682
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 16,
+            "dice": 0.5640471511575146,
+            "iou": 0.45635274149061844
+          }
+        },
+        "macro_dice": 0.6610573082545061,
+        "macro_iou": 0.5301341604957869
+      }
+    },
+    {
+      "epoch": 55,
+      "loss": 0.843667299747467,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 30,
+            "dice": 0.5617273938363707,
+            "iou": 0.45550366487926497
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.7876799978698634,
+            "iou": 0.6550016054457982
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.6292186858330098,
+            "iou": 0.47616201860797847
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.4791991988703678,
+            "iou": 0.3581068501649022
+          }
+        },
+        "macro_dice": 0.614456319102403,
+        "macro_iou": 0.48619353477448596
+      }
+    },
+    {
+      "epoch": 56,
+      "loss": 1.0738674926757812,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 33,
+            "dice": 0.4802896335294209,
+            "iou": 0.3986127584517649
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 30,
+            "dice": 0.7340130538045229,
+            "iou": 0.6172144524387523
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.516734302260819,
+            "iou": 0.3606109620198742
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.546584669475926,
+            "iou": 0.43109003708959437
+          }
+        },
+        "macro_dice": 0.5694054147676721,
+        "macro_iou": 0.45188205249999647
+      }
+    },
+    {
+      "epoch": 57,
+      "loss": 0.8526942420005799,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 27,
+            "dice": 0.5502711301659137,
+            "iou": 0.45695426206594963
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.8420090902497681,
+            "iou": 0.7321805563114977
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.7132033502287648,
+            "iou": 0.5713094919725645
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 19,
+            "dice": 0.605725596502694,
+            "iou": 0.49447305262512237
+          }
+        },
+        "macro_dice": 0.6778022917867852,
+        "macro_iou": 0.5637293407437836
+      }
+    },
+    {
+      "epoch": 58,
+      "loss": 0.7337731051445008,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.5426162709960439,
+            "iou": 0.4962252880482264
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.8057146899306807,
+            "iou": 0.7024042813216739
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.7417066479988906,
+            "iou": 0.6034490474363893
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 15,
+            "dice": 0.6365227196303295,
+            "iou": 0.5208346377733051
+          }
+        },
+        "macro_dice": 0.6816400821389862,
+        "macro_iou": 0.5807283136448986
+      }
+    },
+    {
+      "epoch": 59,
+      "loss": 0.7158130693435669,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.6047863932873662,
+            "iou": 0.549176128408865
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 6,
+            "dice": 0.6873025688935095,
+            "iou": 0.6048785010195825
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 11,
+            "dice": 0.7606770351884585,
+            "iou": 0.627035720757381
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 20,
+            "dice": 0.6247113990129981,
+            "iou": 0.5094388037921648
+          }
+        },
+        "macro_dice": 0.6693693490955831,
+        "macro_iou": 0.5726322884944983
+      }
+    },
+    {
+      "epoch": 60,
+      "loss": 0.6945338988304138,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 26,
+            "dice": 0.5738671811205576,
+            "iou": 0.505772574541877
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 23,
+            "dice": 0.8729105438992457,
+            "iou": 0.7764149203396925
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 25,
+            "dice": 0.7663754316272384,
+            "iou": 0.6226924439894476
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 22,
+            "dice": 0.6055504064811057,
+            "iou": 0.48107144826230724
+          }
+        },
+        "macro_dice": 0.7046758907820369,
+        "macro_iou": 0.5964878467833311
+      }
+    },
+    {
+      "epoch": 61,
+      "loss": 0.7676606893539428,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 4,
+            "dice": 0.5113236328823373,
+            "iou": 0.4455298424522571
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 11,
+            "dice": 0.818843587624156,
+            "iou": 0.7052157754496187
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 8,
+            "dice": 0.7665981066846222,
+            "iou": 0.6418513297077364
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 18,
+            "dice": 0.6408565260505951,
+            "iou": 0.521594861803028
+          }
+        },
+        "macro_dice": 0.6844054633104276,
+        "macro_iou": 0.57854795235316
+      }
+    },
+    {
+      "epoch": 62,
+      "loss": 0.7957760095596313,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.624831404500905,
+            "iou": 0.5627949117515607
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 10,
+            "dice": 0.8402579100519574,
+            "iou": 0.7382340894732894
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 8,
+            "dice": 0.7985436556753691,
+            "iou": 0.669034801046059
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 9,
+            "dice": 0.5875160125917271,
+            "iou": 0.4919036039855695
+          }
+        },
+        "macro_dice": 0.7127872457049896,
+        "macro_iou": 0.6154918515641197
+      }
+    },
+    {
+      "epoch": 63,
+      "loss": 0.7202768683433532,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.6889094412878135,
+            "iou": 0.6012772359395591
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 7,
+            "dice": 0.7932353356485495,
+            "iou": 0.6989199923538926
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 9,
+            "dice": 0.8484741376857265,
+            "iou": 0.737825642383471
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 13,
+            "dice": 0.6607706661009214,
+            "iou": 0.5555973368184052
+          }
+        },
+        "macro_dice": 0.7478473951807527,
+        "macro_iou": 0.648405051873832
+      }
+    },
+    {
+      "epoch": 64,
+      "loss": 0.6412310910224914,
+      "validation": {
+        "images": 42,
+        "per_organ": {
+          "left lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 9,
+            "dice": 0.5113681807649872,
+            "iou": 0.43976714837297637
+          },
+          "right lung": {
+            "positive_images": 5,
+            "absent_label_images": 37,
+            "absent_label_images_with_prediction": 12,
+            "dice": 0.7026148053170522,
+            "iou": 0.6108906409358226
+          },
+          "heart": {
+            "positive_images": 3,
+            "absent_label_images": 39,
+            "absent_label_images_with_prediction": 8,
+            "dice": 0.6435138481310022,
+            "iou": 0.48050325467971194
+          },
+          "liver": {
+            "positive_images": 15,
+            "absent_label_images": 27,
+            "absent_label_images_with_prediction": 18,
+            "dice": 0.628895830980171,
+            "iou": 0.5147742618489445
+          }
+        },
+        "macro_dice": 0.6215981662983032,
+        "macro_iou": 0.5114838264593639
+      }
+    }
+  ],
+  "validation": {
+    "images": 42,
+    "per_organ": {
+      "left lung": {
+        "positive_images": 5,
+        "absent_label_images": 37,
+        "absent_label_images_with_prediction": 12,
+        "dice": 0.6889094412878135,
+        "iou": 0.6012772359395591
+      },
+      "right lung": {
+        "positive_images": 5,
+        "absent_label_images": 37,
+        "absent_label_images_with_prediction": 7,
+        "dice": 0.7932353356485495,
+        "iou": 0.6989199923538926
+      },
+      "heart": {
+        "positive_images": 3,
+        "absent_label_images": 39,
+        "absent_label_images_with_prediction": 9,
+        "dice": 0.8484741376857265,
+        "iou": 0.737825642383471
+      },
+      "liver": {
+        "positive_images": 15,
+        "absent_label_images": 27,
+        "absent_label_images_with_prediction": 13,
+        "dice": 0.6607706661009214,
+        "iou": 0.5555973368184052
+      }
+    },
+    "macro_dice": 0.7478473951807527,
+    "macro_iou": 0.648405051873832
+  },
+  "test": {
+    "images": 40,
+    "per_organ": {
+      "left lung": {
+        "positive_images": 5,
+        "absent_label_images": 35,
+        "absent_label_images_with_prediction": 17,
+        "dice": 0.5669786462873223,
+        "iou": 0.4788337753761918
+      },
+      "right lung": {
+        "positive_images": 5,
+        "absent_label_images": 35,
+        "absent_label_images_with_prediction": 14,
+        "dice": 0.7611361558260439,
+        "iou": 0.6452635238694638
+      },
+      "heart": {
+        "positive_images": 3,
+        "absent_label_images": 37,
+        "absent_label_images_with_prediction": 13,
+        "dice": 0.5094975548888813,
+        "iou": 0.41392688785920334
+      },
+      "liver": {
+        "positive_images": 18,
+        "absent_label_images": 22,
+        "absent_label_images_with_prediction": 13,
+        "dice": 0.7957668991981215,
+        "iou": 0.6853696368232296
+      }
+    },
+    "macro_dice": 0.6583448140500923,
+    "macro_iou": 0.5558484559820221
+  }
+}

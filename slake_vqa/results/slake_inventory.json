@@ -1,0 +1,234 @@
+{
+  "source": "artifacts/results/slake_inventory.json",
+  "dataset": "BoKelvin/SLAKE",
+  "source_url": "https://huggingface.co/datasets/BoKelvin/SLAKE/resolve/a9083ce/",
+  "files_sha256": {
+    "train.json": "7a9fb81f9d7bb145c3d7e9bc8d3b9016ba18b6539ea5031a53bae8fd3cd991c3",
+    "validation.json": "32b016440b0c3be11056a78a18eeab46333268407fbb6e6b32f9f4c2debc50f6",
+    "test.json": "6be8f7b4c5a46cdbc713a5210a25b6ed5aa1fd1574c83cefb4f998131f17c2c3",
+    "imgs.zip": "44eb7d9214e1ac5b7946e237b669401866df9114fd9a3618c5a84fbffcded0b0",
+    "mask.txt": "d9e4150c7c06d80817bcf1954b120fdc3f28ee6d2165403c57f58055fae5d187"
+  },
+  "splits": {
+    "train": {
+      "english_questions": 4919,
+      "unique_image_ids": 450,
+      "unique_image_hashes": 450,
+      "questions_by_modality": {
+        "MRI": 1129,
+        "CT": 2367,
+        "X-RAY": 1423
+      },
+      "questions_by_category": {
+        "Modality": 534,
+        "Position": 847,
+        "Organ": 1269,
+        "Size": 323,
+        "Abnormality": 716,
+        "Quantity": 220,
+        "Plane": 249,
+        "Shape": 42,
+        "Color": 137,
+        "KG": 582
+      },
+      "images_with_organ_by_modality": {
+        "MRI": {
+          "liver": 28,
+          "spleen": 12,
+          "right kidney": 14,
+          "left kidney": 14,
+          "brain enhancing tumor": 65,
+          "brain non-enhancing tumor": 75,
+          "brain edema": 89
+        },
+        "CT": {
+          "lung cancer": 12,
+          "liver": 85,
+          "liver cancer": 24,
+          "left temporal lobe": 7,
+          "right temporal lobe": 8,
+          "left eye": 3,
+          "right eye": 3,
+          "brain stem": 8,
+          "right ear": 2,
+          "left ear": 2,
+          "left mandible": 10,
+          "left parotid": 8,
+          "right mandible": 10,
+          "right parotid": 8,
+          "tooth": 4,
+          "spinal cord": 66,
+          "larynx": 6,
+          "trachea": 6,
+          "esophagus": 17,
+          "left kidney": 17,
+          "spleen": 22,
+          "colon": 27,
+          "small bowel": 41,
+          "right kidney": 13,
+          "right lung": 27,
+          "left lung": 25,
+          "stomach": 10,
+          "duodenum": 10,
+          "heart": 17,
+          "rectum": 20,
+          "bladder": 16,
+          "right femoral head": 12,
+          "left femoral head": 12
+        }
+      },
+      "non_label_masks_by_modality": {
+        "X-RAY": 122
+      }
+    },
+    "validation": {
+      "english_questions": 1053,
+      "unique_image_ids": 96,
+      "unique_image_hashes": 96,
+      "questions_by_modality": {
+        "MRI": 233,
+        "CT": 482,
+        "X-RAY": 338
+      },
+      "questions_by_category": {
+        "Modality": 110,
+        "Position": 183,
+        "Abnormality": 132,
+        "Size": 59,
+        "Organ": 254,
+        "Quantity": 56,
+        "Plane": 62,
+        "Shape": 11,
+        "Color": 31,
+        "KG": 155
+      },
+      "images_with_organ_by_modality": {
+        "MRI": {
+          "spleen": 3,
+          "liver": 5,
+          "left kidney": 3,
+          "right kidney": 3,
+          "brain enhancing tumor": 15,
+          "brain non-enhancing tumor": 18,
+          "brain edema": 20
+        },
+        "CT": {
+          "lung cancer": 3,
+          "liver": 15,
+          "liver cancer": 2,
+          "left temporal lobe": 1,
+          "right temporal lobe": 1,
+          "left eye": 1,
+          "right eye": 1,
+          "right ear": 1,
+          "left mandible": 3,
+          "brain stem": 2,
+          "left ear": 1,
+          "tooth": 1,
+          "left parotid": 1,
+          "right mandible": 2,
+          "right parotid": 1,
+          "spinal cord": 18,
+          "larynx": 3,
+          "left kidney": 9,
+          "spleen": 7,
+          "colon": 8,
+          "small bowel": 13,
+          "right kidney": 6,
+          "right lung": 5,
+          "left lung": 5,
+          "duodenum": 3,
+          "esophagus": 2,
+          "heart": 3,
+          "rectum": 4,
+          "right femoral head": 2,
+          "left femoral head": 2,
+          "bladder": 2
+        }
+      },
+      "non_label_masks_by_modality": {
+        "X-RAY": 27
+      }
+    },
+    "test": {
+      "english_questions": 1061,
+      "unique_image_ids": 96,
+      "unique_image_hashes": 96,
+      "questions_by_modality": {
+        "CT": 472,
+        "X-RAY": 361,
+        "MRI": 228
+      },
+      "questions_by_category": {
+        "Modality": 108,
+        "Position": 186,
+        "Organ": 253,
+        "Size": 65,
+        "Abnormality": 150,
+        "Quantity": 52,
+        "Plane": 58,
+        "Shape": 7,
+        "Color": 34,
+        "KG": 148
+      },
+      "images_with_organ_by_modality": {
+        "CT": {
+          "lung cancer": 3,
+          "liver": 18,
+          "liver cancer": 5,
+          "right temporal lobe": 1,
+          "left temporal lobe": 1,
+          "brain stem": 3,
+          "right ear": 1,
+          "left mandible": 2,
+          "right mandible": 2,
+          "left ear": 1,
+          "tooth": 1,
+          "left parotid": 1,
+          "right parotid": 1,
+          "spinal cord": 14,
+          "larynx": 1,
+          "trachea": 2,
+          "esophagus": 5,
+          "left kidney": 6,
+          "spleen": 6,
+          "colon": 7,
+          "small bowel": 8,
+          "right kidney": 4,
+          "right lung": 5,
+          "left lung": 5,
+          "stomach": 2,
+          "duodenum": 2,
+          "heart": 3,
+          "rectum": 3,
+          "bladder": 3
+        },
+        "MRI": {
+          "liver": 3,
+          "spleen": 3,
+          "left kidney": 1,
+          "brain enhancing tumor": 10,
+          "brain edema": 19,
+          "brain non-enhancing tumor": 14
+        }
+      },
+      "non_label_masks_by_modality": {
+        "X-RAY": 30
+      }
+    }
+  },
+  "split_overlap": {
+    "train/validation": {
+      "ids": 0,
+      "hashes": 0
+    },
+    "train/test": {
+      "ids": 0,
+      "hashes": 0
+    },
+    "validation/test": {
+      "ids": 0,
+      "hashes": 0
+    }
+  }
+}

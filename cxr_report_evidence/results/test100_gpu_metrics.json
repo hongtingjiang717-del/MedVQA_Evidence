@@ -1,0 +1,67 @@
+{
+  "source": "artifacts/results/cxr-openi-test100-gpu/report-metrics.json",
+  "compute": "cuda",
+  "coverage": {
+    "planned_studies": 100,
+    "paired_studies": 100,
+    "generated_reports": 400
+  },
+  "reports_sha256": "b609b804930dd3e40a6c80df109da5ceb95ff3cfa63ef8a4aa7b4fd5e23dc631",
+  "manifest_sha256": "ea079b237d72c91bca38f93c69975a671988b7d42aa090518bad8d214d6922c6",
+  "adapter_sha256": "f8c8b3a6cfdcdff8c76495c433ac3cb8250672f167fd0aa38e3da0219f3ad0da",
+  "by_split": {
+    "test": {
+      "base_image": {
+        "reports": 100,
+        "rouge_l_f1": 0.11585014107330978
+      },
+      "base_text": {
+        "reports": 100,
+        "rouge_l_f1": 0.11939788422322624
+      },
+      "lora_image": {
+        "reports": 100,
+        "rouge_l_f1": 0.30236450702241463
+      },
+      "lora_text": {
+        "reports": 100,
+        "rouge_l_f1": 0.2638007543183513
+      }
+    }
+  },
+  "paired_comparisons": {
+    "lora_gain_image": {
+      "first": "lora_image",
+      "second": "base_image",
+      "mean_difference": 0.18651436594910484,
+      "first_higher": 95,
+      "second_higher": 5,
+      "tied": 0
+    },
+    "lora_gain_text": {
+      "first": "lora_text",
+      "second": "base_text",
+      "mean_difference": 0.1444028700951251,
+      "first_higher": 85,
+      "second_higher": 14,
+      "tied": 1
+    },
+    "lora_image_gain": {
+      "first": "lora_image",
+      "second": "lora_text",
+      "mean_difference": 0.03856375270406329,
+      "first_higher": 53,
+      "second_higher": 42,
+      "tied": 5
+    },
+    "base_image_gain": {
+      "first": "base_image",
+      "second": "base_text",
+      "mean_difference": -0.0035477431499164494,
+      "first_higher": 47,
+      "second_higher": 51,
+      "tied": 2
+    }
+  },
+  "verification": "Verified SHA256 digests of the input manifest, adapter, output reports and all 100 images. Recomputed ROUGE-L F1 with Porter tokenization and matched the GPU archive aggregate."
+}

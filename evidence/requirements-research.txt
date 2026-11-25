@@ -1,0 +1,7 @@
+-r requirements-app.txt
+transformers>=4.57,<5
+# Keep the AutoDL PyTorch 2.5.1 image usable without upgrading torch.
+accelerate==1.11.0
+peft>=0.17,<1
+scikit-learn>=1.5,<2
+# Install torch and its matching torchvision build for your hardware first.

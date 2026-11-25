@@ -1,0 +1,21 @@
+{
+  "source": "artifacts/results/rag_summary.json",
+  "embedding": "hashed_tokens",
+  "reranker": null,
+  "questions": 9,
+  "passages": 8,
+  "metrics": {
+    "dense": {
+      "recall@3": 0.9444444444444444,
+      "mrr@3": 0.9444444444444444
+    },
+    "sparse": {
+      "recall@3": 1.0,
+      "mrr@3": 0.9259259259259259
+    },
+    "hybrid": {
+      "recall@3": 1.0,
+      "mrr@3": 0.8888888888888888
+    }
+  }
+}

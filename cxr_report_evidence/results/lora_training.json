@@ -1,0 +1,88 @@
+{
+  "source": "artifacts/checkpoints/cxr-openi-formal.xlu8LK/training_summary.json",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "seed": 42,
+  "manifest_sha256": "ea079b237d72c91bca38f93c69975a671988b7d42aa090518bad8d214d6922c6",
+  "image_edge": 768,
+  "use_indication": true,
+  "train_studies": 1600,
+  "validation_studies": 100,
+  "train_metrics": {
+    "train_runtime": 4284.9618,
+    "train_samples_per_second": 3.734,
+    "train_steps_per_second": 0.467,
+    "total_flos": 6.639715066454016e+16,
+    "train_loss": 0.9302436261177063,
+    "epoch": 10.0
+  },
+  "validation_metrics": {
+    "eval_loss": 1.0231387615203857,
+    "eval_runtime": 7.4103,
+    "eval_samples_per_second": 13.495,
+    "eval_steps_per_second": 13.495,
+    "epoch": 10.0
+  },
+  "global_step": 2000,
+  "epochs_requested": 10,
+  "max_steps_requested": null,
+  "epochs_completed": 10.0,
+  "planned_steps": 2000,
+  "early_stopping_patience": 3,
+  "stopped_early": false,
+  "gradient_accumulation_steps": 8,
+  "epoch_validation": [
+    {
+      "step": 200,
+      "epoch": 1.0,
+      "eval_loss": 1.2903046607971191
+    },
+    {
+      "step": 400,
+      "epoch": 2.0,
+      "eval_loss": 1.159489393234253
+    },
+    {
+      "step": 600,
+      "epoch": 3.0,
+      "eval_loss": 1.0816508531570435
+    },
+    {
+      "step": 800,
+      "epoch": 4.0,
+      "eval_loss": 1.0617166757583618
+    },
+    {
+      "step": 1000,
+      "epoch": 5.0,
+      "eval_loss": 1.0491901636123657
+    },
+    {
+      "step": 1200,
+      "epoch": 6.0,
+      "eval_loss": 1.0334702730178833
+    },
+    {
+      "step": 1400,
+      "epoch": 7.0,
+      "eval_loss": 1.0231387615203857
+    },
+    {
+      "step": 1600,
+      "epoch": 8.0,
+      "eval_loss": 1.029097080230713
+    },
+    {
+      "step": 1800,
+      "epoch": 9.0,
+      "eval_loss": 1.0287798643112183
+    },
+    {
+      "step": 2000,
+      "epoch": 10.0,
+      "eval_loss": 1.035886287689209
+    }
+  ],
+  "best_model_checkpoint": "checkpoint-1400",
+  "best_global_step": 1400,
+  "adapter_sha256": "f8c8b3a6cfdcdff8c76495c433ac3cb8250672f167fd0aa38e3da0219f3ad0da"
+}
